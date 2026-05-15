@@ -1,0 +1,54 @@
+{
+  "existing": {
+    "search_npi": {
+      "SEARCH_NPI00": {
+        "address": [],
+        "basic": {},
+        "endpoint": [],
+        "enumeration_type": "s5d",
+        "identifier": [],
+        "number": "s5f",
+        "other_name": [],
+        "practice_location": [],
+        "taxonomy": []
+      },
+      "SEARCH_NPI01": {
+        "address": [],
+        "basic": {},
+        "endpoint": [],
+        "enumeration_type": "sb7",
+        "identifier": [],
+        "number": "sb9",
+        "other_name": [],
+        "practice_location": [],
+        "taxonomy": []
+      },
+      "SEARCH_NPI02": {
+        "address": [],
+        "basic": {},
+        "endpoint": [],
+        "enumeration_type": "s111",
+        "identifier": [],
+        "number": "s113",
+        "other_name": [],
+        "practice_location": [],
+        "taxonomy": []
+      }
+    }
+  },
+  "new": {
+    "search_npi": {
+      "search_npi_ref01": {
+        "address": [],
+        "basic": {},
+        "endpoint": [],
+        "enumeration_type": "s16b",
+        "identifier": [],
+        "number": "s16d",
+        "other_name": [],
+        "practice_location": [],
+        "taxonomy": []
+      }
+    }
+  }
+}

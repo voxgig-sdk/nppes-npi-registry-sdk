@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "NPPES NPI Registry"
+        url: "https://npiregistry.cms.hhs.gov/api-page"
+      }
+      description: "The NPPES API provides a real-time alternative to accessing NPPES public data, allowing users to retrieve detailed information about healthcare providers using their National Provider Identifier (NPI). Unlike the traditional method of batch downloads, this API facilitates faster and more efficient queries for provider data. The API currently operates with version 2.1, enhancing accessibility and ease of use."
+      servers: [
+        {
+          description: "NPPES NPI Registry API Server"
+          url: "https://npiregistry.cms.hhs.gov/api"
+        }
+      ]
+      title: "NPPES NPI Registry"
+      version: "2.1"
+    }
+  }
+}
+
+}

@@ -1,0 +1,416 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "NPPES NPI Registry",
+    "description": "The NPPES API provides a real-time alternative to accessing NPPES public data, allowing users to retrieve detailed information about healthcare providers using their National Provider Identifier (NPI). Unlike the traditional method of batch downloads, this API facilitates faster and more efficient queries for provider data. The API currently operates with version 2.1, enhancing accessibility and ease of use.",
+    "version": "2.1",
+    "contact": {
+      "name": "NPPES NPI Registry",
+      "url": "https://npiregistry.cms.hhs.gov/api-page"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://npiregistry.cms.hhs.gov/api",
+      "description": "NPPES NPI Registry API Server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Search NPI Registry",
+        "description": "Retrieves detailed information about healthcare providers from the NPPES public data using various search parameters including NPI number, name, taxonomy, address, and other criteria.",
+        "operationId": "searchNPI",
+        "parameters": [
+          {
+            "name": "version",
+            "in": "query",
+            "description": "API version (currently 2.1)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "2.1"
+            }
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "description": "National Provider Identifier (NPI) number - 10-digit unique identifier",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]{10}$"
+            }
+          },
+          {
+            "name": "enumeration_type",
+            "in": "query",
+            "description": "Type of NPI enumeration (NPI-1 for individuals, NPI-2 for organizations)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "NPI-1",
+                "NPI-2"
+              ]
+            }
+          },
+          {
+            "name": "taxonomy_description",
+            "in": "query",
+            "description": "Healthcare provider taxonomy description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "first_name",
+            "in": "query",
+            "description": "Provider's first name (for individual providers)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "last_name",
+            "in": "query",
+            "description": "Provider's last name (for individual providers)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organization_name",
+            "in": "query",
+            "description": "Organization name (for organizational providers)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address_purpose",
+            "in": "query",
+            "description": "Address type (LOCATION, MAILING, PRIMARY, SECONDARY)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "LOCATION",
+                "MAILING",
+                "PRIMARY",
+                "SECONDARY"
+              ]
+            }
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "Provider's city",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "Provider's state (two-letter state code)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Z]{2}$"
+            }
+          },
+          {
+            "name": "postal_code",
+            "in": "query",
+            "description": "Provider's postal code",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "country_code",
+            "in": "query",
+            "description": "Provider's country code",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results to return (default 10, max 200)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "minimum": 1,
+              "maximum": 200
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Number of results to skip for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "pretty",
+            "in": "query",
+            "description": "Format the JSON output for better readability",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with provider data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result_count": {
+                      "type": "integer",
+                      "description": "Number of results returned in this response"
+                    },
+                    "results": {
+                      "type": "array",
+                      "description": "Array of provider records",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "number": {
+                            "type": "string",
+                            "description": "NPI number"
+                          },
+                          "enumeration_type": {
+                            "type": "string",
+                            "description": "Type of enumeration"
+                          },
+                          "basic": {
+                            "type": "object",
+                            "description": "Basic provider information",
+                            "properties": {
+                              "first_name": {
+                                "type": "string"
+                              },
+                              "last_name": {
+                                "type": "string"
+                              },
+                              "middle_name": {
+                                "type": "string"
+                              },
+                              "credential": {
+                                "type": "string"
+                              },
+                              "sole_proprietor": {
+                                "type": "string"
+                              },
+                              "gender": {
+                                "type": "string"
+                              },
+                              "enumeration_date": {
+                                "type": "string",
+                                "format": "date"
+                              },
+                              "last_updated": {
+                                "type": "string",
+                                "format": "date"
+                              },
+                              "status": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "Organization name for NPI-2"
+                              },
+                              "organization_name": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "taxonomies": {
+                            "type": "array",
+                            "description": "Provider taxonomy codes and descriptions",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "code": {
+                                  "type": "string"
+                                },
+                                "desc": {
+                                  "type": "string"
+                                },
+                                "primary": {
+                                  "type": "boolean"
+                                },
+                                "state": {
+                                  "type": "string"
+                                },
+                                "license": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "addresses": {
+                            "type": "array",
+                            "description": "Provider addresses",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "country_code": {
+                                  "type": "string"
+                                },
+                                "country_name": {
+                                  "type": "string"
+                                },
+                                "address_purpose": {
+                                  "type": "string"
+                                },
+                                "address_type": {
+                                  "type": "string"
+                                },
+                                "address_1": {
+                                  "type": "string"
+                                },
+                                "address_2": {
+                                  "type": "string"
+                                },
+                                "city": {
+                                  "type": "string"
+                                },
+                                "state": {
+                                  "type": "string"
+                                },
+                                "postal_code": {
+                                  "type": "string"
+                                },
+                                "telephone_number": {
+                                  "type": "string"
+                                },
+                                "fax_number": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "practiceLocations": {
+                            "type": "array",
+                            "description": "Practice locations"
+                          },
+                          "identifiers": {
+                            "type": "array",
+                            "description": "Other identifiers",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "code": {
+                                  "type": "string"
+                                },
+                                "desc": {
+                                  "type": "string"
+                                },
+                                "identifier": {
+                                  "type": "string"
+                                },
+                                "state": {
+                                  "type": "string"
+                                },
+                                "issuer": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "endpoints": {
+                            "type": "array",
+                            "description": "Provider endpoints for health information exchange"
+                          },
+                          "other_names": {
+                            "type": "array",
+                            "description": "Other names associated with the provider"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "field": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "NPI Search"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "NPI Search",
+      "description": "Operations for searching the National Provider Identifier (NPI) registry"
+    }
+  ],
+  "externalDocs": {
+    "description": "NPPES NPI Registry API Documentation",
+    "url": "https://npiregistry.cms.hhs.gov/api-page"
+  }
+}

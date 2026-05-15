@@ -1,0 +1,23 @@
+{
+  "name": "voxgig-sdk/nppes-npi-registry",
+  "description": "NppesNpiRegistry SDK for PHP",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "NppesNpiRegistry\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "NppesNpiRegistry\\Tests\\": "test/"
+    }
+  }
+}
