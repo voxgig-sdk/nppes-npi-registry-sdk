@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/nppes-npi-registry-sdk/core"
+import "github.com/voxgig-sdk/nppes-npi-registry-sdk/go/core"
 
 func init() {
 	core.UtilityRegistrar = registerAll

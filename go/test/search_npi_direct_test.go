@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/nppes-npi-registry-sdk"
-	"github.com/voxgig-sdk/nppes-npi-registry-sdk/core"
+	sdk "github.com/voxgig-sdk/nppes-npi-registry-sdk/go"
+	"github.com/voxgig-sdk/nppes-npi-registry-sdk/go/core"
 )
 
 func TestSearchNpiDirect(t *testing.T) {

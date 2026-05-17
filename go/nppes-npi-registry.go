@@ -1,10 +1,10 @@
 package voxgignppesnpiregistrysdk
 
 import (
-	"github.com/voxgig-sdk/nppes-npi-registry-sdk/core"
-	"github.com/voxgig-sdk/nppes-npi-registry-sdk/entity"
-	"github.com/voxgig-sdk/nppes-npi-registry-sdk/feature"
-	_ "github.com/voxgig-sdk/nppes-npi-registry-sdk/utility"
+	"github.com/voxgig-sdk/nppes-npi-registry-sdk/go/core"
+	"github.com/voxgig-sdk/nppes-npi-registry-sdk/go/entity"
+	"github.com/voxgig-sdk/nppes-npi-registry-sdk/go/feature"
+	_ "github.com/voxgig-sdk/nppes-npi-registry-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

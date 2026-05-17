@@ -3,7 +3,7 @@ package core
 import (
 	"fmt"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/nppes-npi-registry-sdk/go/utility/struct"
 )
 
 type NppesNpiRegistrySDK struct {

@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/nppes-npi-registry-sdk"
-	"github.com/voxgig-sdk/nppes-npi-registry-sdk/core"
+	sdk "github.com/voxgig-sdk/nppes-npi-registry-sdk/go"
+	"github.com/voxgig-sdk/nppes-npi-registry-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/nppes-npi-registry-sdk/go/utility/struct"
 )
 
 func TestSearchNpiEntity(t *testing.T) {

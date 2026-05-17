@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/nppes-npi-registry-sdk/core"
+	"github.com/voxgig-sdk/nppes-npi-registry-sdk/go/core"
 )
 
 type BaseFeature struct {
