@@ -92,7 +92,6 @@ def _search_npi_basic_setup(extra):
         "NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID": idmap,
         "NPPESNPIREGISTRY_TEST_LIVE": "FALSE",
         "NPPESNPIREGISTRY_TEST_EXPLAIN": "FALSE",
-        "NPPESNPIREGISTRY_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +102,6 @@ def _search_npi_basic_setup(extra):
     if env.get("NPPESNPIREGISTRY_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("NPPESNPIREGISTRY_APIKEY"),
             },
             extra or {},
         ])

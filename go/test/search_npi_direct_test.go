@@ -93,14 +93,12 @@ func search_npiDirectSetup(mockres any) *search_npiDirectSetupResult {
 	env := envOverride(map[string]any{
 		"NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID": map[string]any{},
 		"NPPESNPIREGISTRY_TEST_LIVE":    "FALSE",
-		"NPPESNPIREGISTRY_APIKEY":       "NONE",
 	})
 
 	live := env["NPPESNPIREGISTRY_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["NPPESNPIREGISTRY_APIKEY"],
 		}
 		client := sdk.NewNppesNpiRegistrySDK(mergedOpts)
 

@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'NPPES_NPI_REGISTRY_TEST_SEARCH_NPI_ENTID': idmap,
     'NPPES_NPI_REGISTRY_TEST_LIVE': 'FALSE',
     'NPPES_NPI_REGISTRY_TEST_EXPLAIN': 'FALSE',
-    'NPPES_NPI_REGISTRY_APIKEY': 'NONE',
   })
 
   idmap = env['NPPES_NPI_REGISTRY_TEST_SEARCH_NPI_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new NppesNpiRegistrySDK(merge([
       {
-        apikey: env.NPPES_NPI_REGISTRY_APIKEY,
       },
       extra
     ]))

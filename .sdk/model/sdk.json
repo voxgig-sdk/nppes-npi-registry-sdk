@@ -17,7 +17,17 @@
           }
         ],
         "title": "NPPES NPI Registry",
-        "version": "2.1"
+        "version": "2.1",
+        "tagline": "Look up US healthcare providers by NPI, name, location, or taxonomy from the official CMS NPPES registry",
+        "homepage": "https://npiregistry.cms.hhs.gov/",
+        "docs_url": "https://npiregistry.cms.hhs.gov/api-page",
+        "license_short": "US Government public data; no licence fee, attribution to CMS / NPPES recommended.",
+        "license_md": "- Data is published by the US Centers for Medicare & Medicaid Services (CMS) as part of the National Plan and Provider Enumeration System (NPPES).\n- As a US federal government dataset it is generally considered public information, free to access and reuse.\n- No API key or registration is required; attribution to CMS / NPPES is good practice.\n- Consult the CMS NPPES site for any disclaimers about data accuracy and currency.",
+        "about_md": "The [NPPES NPI Registry API](https://npiregistry.cms.hhs.gov/api-page) is a free, real-time lookup service over the US National Plan and Provider Enumeration System, operated by the [Centers for Medicare & Medicaid Services (CMS)](https://www.cms.gov/). It exposes the same provider data that powers the public [NPI Registry search](https://npiregistry.cms.hhs.gov/) and is offered as an alternative to downloading the monthly NPPES full-file dump.\n\nThe API serves the current version 2.1 of the NPPES dataset and accepts standard HTTP `GET` requests against `https://npiregistry.cms.hhs.gov/api/`. Queries can be filtered by criteria such as NPI number, provider name, organization name, city, state, postal code, country, and taxonomy, and responses include identifying details, practice and mailing addresses, taxonomies, and other identifiers for each matched provider.\n\nNo authentication or API key is required. Callers must supply a `version` parameter (currently `2.1`); requests for unsupported versions are rejected. The service is intended for interactive and lightweight programmatic lookups rather than bulk extraction — for bulk needs CMS publishes the downloadable NPPES data dissemination files.",
+        "entity_desc": {
+          "search_npi": "Search the NPPES registry for healthcare providers, returning matching individual and organizational NPI records; queried via `GET /api/` with parameters such as `version`, `number`, `first_name`, `last_name`, `organization_name`, `city`, `state`, `postal_code`, `country_code`, and `taxonomy_description`."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -25,7 +35,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "search_npi": {

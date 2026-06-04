@@ -20,9 +20,7 @@ loading a specific record.
 <?php
 require_once 'nppesnpiregistry_sdk.php';
 
-$client = new NppesNpiRegistrySDK([
-    "apikey" => getenv("NPPES-NPI-REGISTRY_APIKEY"),
-]);
+$client = new NppesNpiRegistrySDK([]);
 ```
 
 ### 2. List searchnpis
@@ -119,7 +117,6 @@ Create a `.env.local` file at the project root:
 
 ```
 NPPES-NPI-REGISTRY_TEST_LIVE=TRUE
-NPPES-NPI-REGISTRY_APIKEY=<your-key>
 ```
 
 Then run:
@@ -142,7 +139,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

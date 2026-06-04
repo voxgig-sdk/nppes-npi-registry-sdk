@@ -61,14 +61,12 @@ def _search_npi_direct_setup(mockres):
     env = runner.env_override({
         "NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID": {},
         "NPPESNPIREGISTRY_TEST_LIVE": "FALSE",
-        "NPPESNPIREGISTRY_APIKEY": "NONE",
     })
 
     live = env.get("NPPESNPIREGISTRY_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("NPPESNPIREGISTRY_APIKEY"),
         }
         client = NppesNpiRegistrySDK(merged_opts)
         return {
