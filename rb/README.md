@@ -10,13 +10,13 @@ The Ruby SDK for the NppesNpiRegistry API — an entity-oriented client using id
 
 ## Install
 ```bash
-gem install nppes-npi-registry-sdk
+gem install voxgig-sdk-nppes-npi-registry
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "nppes-npi-registry-sdk"
+gem "voxgig-sdk-nppes-npi-registry"
 ```
 
 Then run:

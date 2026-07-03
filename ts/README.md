@@ -10,7 +10,7 @@ The TypeScript SDK for the NppesNpiRegistry API — a type-safe, entity-oriented
 
 ## Install
 ```bash
-npm install nppes-npi-registry
+npm install @voxgig-sdk/nppes-npi-registry
 ```
 ## Tutorial: your first API call
 

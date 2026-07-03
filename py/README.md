@@ -10,7 +10,7 @@ The Python SDK for the NppesNpiRegistry API — an entity-oriented client follow
 
 ## Install
 ```bash
-pip install nppes-npi-registry-sdk
+pip install voxgig-sdk-nppes-npi-registry
 ```
 
 Or install from source:

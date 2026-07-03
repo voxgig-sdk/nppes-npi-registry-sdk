@@ -10,7 +10,7 @@ The PHP SDK for the NppesNpiRegistry API — an entity-oriented client using PHP
 
 ## Install
 ```bash
-composer require voxgig/nppes-npi-registry-sdk
+composer require voxgig-sdk/nppes-npi-registry
 ```
 
 

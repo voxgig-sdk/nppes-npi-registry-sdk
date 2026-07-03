@@ -10,7 +10,7 @@ The Lua SDK for the NppesNpiRegistry API — an entity-oriented client using Lua
 
 ## Install
 ```bash
-luarocks install nppes-npi-registry-sdk
+luarocks install voxgig-sdk-nppes-npi-registry
 ```
 
 If the module is not yet published, add the source directory to
