@@ -68,12 +68,14 @@ function search_npi_direct_setup($mockres)
     $env = Runner::env_override([
         "NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID" => [],
         "NPPESNPIREGISTRY_TEST_LIVE" => "FALSE",
+        "NPPESNPIREGISTRY_APIKEY" => "NONE",
     ]);
 
     $live = $env["NPPESNPIREGISTRY_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["NPPESNPIREGISTRY_APIKEY"],
         ];
         $client = new NppesNpiRegistrySDK($merged_opts);
         return [

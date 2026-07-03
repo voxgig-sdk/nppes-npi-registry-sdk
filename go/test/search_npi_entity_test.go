@@ -119,6 +119,7 @@ func search_npiBasicSetup(extra map[string]any) *entityTestSetup {
 		"NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID": idmap,
 		"NPPESNPIREGISTRY_TEST_LIVE":      "FALSE",
 		"NPPESNPIREGISTRY_TEST_EXPLAIN":   "FALSE",
+		"NPPESNPIREGISTRY_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID"])
@@ -129,6 +130,7 @@ func search_npiBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["NPPESNPIREGISTRY_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["NPPESNPIREGISTRY_APIKEY"],
 			},
 			extra,
 		})

@@ -86,6 +86,7 @@ function search_npi_basic_setup($extra)
         "NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID" => $idmap,
         "NPPESNPIREGISTRY_TEST_LIVE" => "FALSE",
         "NPPESNPIREGISTRY_TEST_EXPLAIN" => "FALSE",
+        "NPPESNPIREGISTRY_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,6 +98,7 @@ function search_npi_basic_setup($extra)
     if ($env["NPPESNPIREGISTRY_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["NPPESNPIREGISTRY_APIKEY"],
             ],
             $extra ?? [],
         ]);

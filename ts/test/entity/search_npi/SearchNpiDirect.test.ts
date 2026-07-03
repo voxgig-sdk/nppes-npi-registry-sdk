@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID': {},
     'NPPESNPIREGISTRY_TEST_LIVE': 'FALSE',
+    'NPPESNPIREGISTRY_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.NPPESNPIREGISTRY_TEST_LIVE
 
   if (live) {
     const client = new NppesNpiRegistrySDK({
+      apikey: env.NPPESNPIREGISTRY_APIKEY,
     })
 
     let idmap: any = env['NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID']
