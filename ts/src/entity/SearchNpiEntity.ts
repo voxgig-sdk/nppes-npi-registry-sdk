@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  SearchNpi,
+  SearchNpiListMatch,
+} from '../NppesNpiRegistryTypes'
 
 // TODO: needs Entity superclass
-class SearchNpiEntity extends NppesNpiRegistryEntityBase {
+class SearchNpiEntity extends NppesNpiRegistryEntityBase<SearchNpi> {
 
   constructor(client: NppesNpiRegistrySDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class SearchNpiEntity extends NppesNpiRegistryEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: SearchNpiListMatch, ctrl?: Control): Promise<SearchNpi[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class SearchNpiEntity extends NppesNpiRegistryEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<SearchNpi[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

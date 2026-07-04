@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://npiregistry.cms.hhs.gov/api',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },

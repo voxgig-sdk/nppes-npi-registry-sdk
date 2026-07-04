@@ -9,9 +9,12 @@ The TypeScript SDK for the NppesNpiRegistry API — a type-safe, entity-oriented
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/nppes-npi-registry
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/nppes-npi-registry-sdk/releases](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { NppesNpiRegistrySDK } from 'nppes-npi-registry'
+import { NppesNpiRegistrySDK } from '@voxgig-sdk/nppes-npi-registry'
 
-const client = new NppesNpiRegistrySDK({
-  apikey: process.env.NPPES-NPI-REGISTRY_APIKEY,
-})
+const client = new NppesNpiRegistrySDK()
 ```
 
 ### 2. List searchnpis
 
 ```ts
-const result = await client.SearchNpi().list()
+const result = await client.searchnpi.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = NppesNpiRegistrySDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.searchnpi.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -89,7 +90,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new NppesNpiRegistrySDK({ apikey: '...' })
+const client = new NppesNpiRegistrySDK()
 const testClient = client.tester()
 ```
 
@@ -98,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.searchnpi
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -125,7 +126,6 @@ const logger = {
 }
 
 const client = new NppesNpiRegistrySDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -135,8 +135,7 @@ const client = new NppesNpiRegistrySDK({
 Create a `.env.local` file at the project root:
 
 ```
-NPPES-NPI-REGISTRY_TEST_LIVE=TRUE
-NPPES-NPI-REGISTRY_APIKEY=<your-key>
+NPPES_NPI_REGISTRY_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -154,7 +153,6 @@ cd ts && npm test
 
 ```ts
 new NppesNpiRegistrySDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -165,7 +163,6 @@ new NppesNpiRegistrySDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -276,7 +273,7 @@ API path: `/`
 
 ### SearchNpi
 
-Create an instance: `const search_npi = client.SearchNpi()`
+Create an instance: `const search_npi = client.search_npi`
 
 #### Operations
 
@@ -301,7 +298,7 @@ Create an instance: `const search_npi = client.SearchNpi()`
 #### Example: List
 
 ```ts
-const search_npis = await client.SearchNpi().list()
+const search_npis = await client.search_npi.list()
 ```
 
 
@@ -362,7 +359,7 @@ nppes-npi-registry/
 Import the SDK from the package root:
 
 ```ts
-import { NppesNpiRegistrySDK } from 'nppes-npi-registry'
+import { NppesNpiRegistrySDK } from '@voxgig-sdk/nppes-npi-registry'
 ```
 
 ### Entity state
@@ -372,11 +369,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const searchnpi = client.searchnpi
+await searchnpi.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// searchnpi.data() now returns the loaded searchnpi data
+// searchnpi.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

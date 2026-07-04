@@ -50,8 +50,7 @@ class SearchNpiEntityTest extends TestCase
         $search_npi_ref01_ent = $client->SearchNpi(null);
         $search_npi_ref01_match = [];
 
-        [$search_npi_ref01_list_result, $err] = $search_npi_ref01_ent->list($search_npi_ref01_match, null);
-        $this->assertNull($err);
+        $search_npi_ref01_list_result = $search_npi_ref01_ent->list($search_npi_ref01_match, null);
         $this->assertIsArray($search_npi_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function search_npi_basic_setup($extra)
         "NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID" => $idmap,
         "NPPESNPIREGISTRY_TEST_LIVE" => "FALSE",
         "NPPESNPIREGISTRY_TEST_EXPLAIN" => "FALSE",
-        "NPPESNPIREGISTRY_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function search_npi_basic_setup($extra)
     if ($env["NPPESNPIREGISTRY_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["NPPESNPIREGISTRY_APIKEY"],
             ],
             $extra ?? [],
         ]);

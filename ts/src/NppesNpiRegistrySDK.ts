@@ -2,6 +2,8 @@
 
 import { SearchNpiEntity } from './entity/SearchNpiEntity'
 
+export type * from './NppesNpiRegistryTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class NppesNpiRegistrySDK {
 
 
 
+  _search_npi?: SearchNpiEntity
+
+  // Idiomatic facade: `client.search_npi.list()` / `client.search_npi.load({ id })`.
+  get search_npi(): SearchNpiEntity {
+    return (this._search_npi ??= new SearchNpiEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.search_npi` instead. */
   SearchNpi(data?: any) {
     const self = this
     return new SearchNpiEntity(self,data)

@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -84,7 +83,7 @@ same parameters as `direct()`.
 ## SearchNpiEntity
 
 ```lua
-local search_npi = client:SearchNpi(nil)
+local search_npi = client:search_npi(nil)
 ```
 
 ### Fields
@@ -108,7 +107,7 @@ local search_npi = client:SearchNpi(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:SearchNpi():list()
+local results, err = client:search_npi():list()
 ```
 
 ### Common Methods

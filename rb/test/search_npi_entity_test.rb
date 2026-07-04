@@ -43,8 +43,7 @@ class SearchNpiEntityTest < Minitest::Test
     search_npi_ref01_ent = client.SearchNpi(nil)
     search_npi_ref01_match = {}
 
-    search_npi_ref01_list_result, err = search_npi_ref01_ent.list(search_npi_ref01_match, nil)
-    assert_nil err
+    search_npi_ref01_list_result = search_npi_ref01_ent.list(search_npi_ref01_match, nil)
     assert search_npi_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def search_npi_basic_setup(extra)
     "NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID" => idmap,
     "NPPESNPIREGISTRY_TEST_LIVE" => "FALSE",
     "NPPESNPIREGISTRY_TEST_EXPLAIN" => "FALSE",
-    "NPPESNPIREGISTRY_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def search_npi_basic_setup(extra)
   if env["NPPESNPIREGISTRY_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["NPPESNPIREGISTRY_APIKEY"],
       },
       extra || {},
     ])

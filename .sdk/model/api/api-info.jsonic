@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         name: "NPPES NPI Registry"
         url: "https://npiregistry.cms.hhs.gov/api-page"

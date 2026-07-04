@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:search_npi():list() / client:search_npi():load({ id = ... })
+function NppesNpiRegistrySDK:search_npi(data)
+  local EntityMod = require("entity.search_npi_entity")
+  if data == nil then
+    if self._search_npi == nil then
+      self._search_npi = EntityMod.new(self, nil)
+    end
+    return self._search_npi
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:search_npi() instead.
 function NppesNpiRegistrySDK:SearchNpi(data)
   local EntityMod = require("entity.search_npi_entity")
   return EntityMod.new(self, data)

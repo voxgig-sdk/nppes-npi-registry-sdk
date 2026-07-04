@@ -245,6 +245,9 @@ func (sdk *NppesNpiRegistrySDK) Direct(fetchargs map[string]any) (map[string]any
 }
 
 
+// SearchNpi returns a SearchNpi entity bound to this client.
+// Idiomatic usage: client.SearchNpi(nil).List(nil, nil) or
+// client.SearchNpi(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NppesNpiRegistrySDK) SearchNpi(data map[string]any) NppesNpiRegistryEntity {
 	return NewSearchNpiEntityFunc(sdk, data)
 }

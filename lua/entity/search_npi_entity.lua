@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch SearchNpiListMatch
+---@param ctrl? table
+---@return SearchNpi[]
+---@return string? err
 function SearchNpiEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
