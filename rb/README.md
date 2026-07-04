@@ -28,16 +28,14 @@ require_relative "NppesNpiRegistry_sdk"
 client = NppesNpiRegistrySDK.new
 ```
 
-### 2. List searchnpis
+### 2. List searchnpi records
 
 ```ruby
 begin
-  result = client.searchnpi.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of SearchNpi records — iterate directly.
+  searchnpis = client.SearchNpi.list
+  searchnpis.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = NppesNpiRegistrySDK.test
+client = NppesNpiRegistrySDK.test({
+  "entity" => { "searchnpi" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.searchnpi.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+searchnpi = client.SearchNpi.load({ "id" => "test01" })
+puts searchnpi
 ```
 
 ### Use a custom fetch function
@@ -231,7 +233,7 @@ API path: `/`
 
 ### SearchNpi
 
-Create an instance: `const search_npi = client.search_npi`
+Create an instance: `search_npi = client.SearchNpi`
 
 #### Operations
 
@@ -255,8 +257,9 @@ Create an instance: `const search_npi = client.search_npi`
 
 #### Example: List
 
-```ts
-const search_npis = await client.search_npi.list()
+```ruby
+# list returns an Array of SearchNpi records (raises on error).
+search_npis = client.SearchNpi.list
 ```
 
 
@@ -331,7 +334,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-searchnpi = client.searchnpi
+searchnpi = client.SearchNpi
 searchnpi.load({ "id" => "example_id" })
 
 # searchnpi.data_get now returns the loaded searchnpi data

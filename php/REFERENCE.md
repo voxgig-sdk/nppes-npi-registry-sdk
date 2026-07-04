@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## SearchNpiEntity
 
 ```php
-$search_npi = $client->search_npi();
+$search_npi = $client->SearchNpi();
 ```
 
 ### Fields
@@ -109,7 +109,7 @@ $search_npi = $client->search_npi();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->search_npi()->list([]);
+$results = $client->SearchNpi()->list([]);
 ```
 
 ### Common Methods

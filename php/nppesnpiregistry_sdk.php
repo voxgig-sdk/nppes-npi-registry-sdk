@@ -233,10 +233,10 @@ class NppesNpiRegistrySDK
 
     private $_search_npi = null;
 
-    // Idiomatic facade: $client->search_npi()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias SearchNpi() (PHP method
-    // names are case-insensitive).
-    public function search_npi($data = null)
+    // Canonical facade: $client->SearchNpi()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->search_npi()
+    // resolves here too.
+    public function SearchNpi($data = null)
     {
         require_once __DIR__ . '/entity/search_npi_entity.php';
         if ($data === null) {

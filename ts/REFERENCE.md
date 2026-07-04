@@ -109,7 +109,7 @@ Alias for `NppesNpiRegistrySDK.test()`.
 ## SearchNpiEntity
 
 ```ts
-const search_npi = client.search_npi
+const search_npi = client.SearchNpi()
 ```
 
 ### Fields
@@ -133,7 +133,7 @@ const search_npi = client.search_npi
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.search_npi.list()
+const results = await client.SearchNpi().list()
 ```
 
 ### Common Methods

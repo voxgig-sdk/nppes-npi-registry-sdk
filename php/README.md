@@ -29,18 +29,16 @@ require_once 'nppesnpiregistry_sdk.php';
 $client = new NppesNpiRegistrySDK();
 ```
 
-### 2. List searchnpis
+### 2. List searchnpi records
 
 ```php
 try {
-    $result = $client->searchnpi()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of SearchNpi records — iterate directly.
+    $searchnpis = $client->SearchNpi()->list();
+    foreach ($searchnpis as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = NppesNpiRegistrySDK::test();
+$client = NppesNpiRegistrySDK::test([
+    "entity" => ["searchnpi" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->searchnpi()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$searchnpi = $client->SearchNpi()->load(["id" => "test01"]);
+print_r($searchnpi);
 ```
 
 ### Use a custom fetch function
@@ -236,7 +238,7 @@ API path: `/`
 
 ### SearchNpi
 
-Create an instance: `const search_npi = client.search_npi`
+Create an instance: `$search_npi = $client->SearchNpi();`
 
 #### Operations
 
@@ -260,8 +262,9 @@ Create an instance: `const search_npi = client.search_npi`
 
 #### Example: List
 
-```ts
-const search_npis = await client.search_npi.list()
+```php
+// list() returns an array of SearchNpi records (throws on error).
+$search_npis = $client->SearchNpi()->list();
 ```
 
 
@@ -336,7 +339,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$searchnpi = $client->searchnpi();
+$searchnpi = $client->SearchNpi();
 $searchnpi->load(["id" => "example_id"]);
 
 // $searchnpi->dataGet() now returns the loaded searchnpi data

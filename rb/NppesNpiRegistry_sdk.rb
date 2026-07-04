@@ -208,13 +208,7 @@ class NppesNpiRegistrySDK
   end
 
 
-  # Idiomatic facade: client.search_npi.list / client.search_npi.load({ "id" => ... })
-  def search_npi
-    require_relative 'entity/search_npi_entity'
-    @search_npi ||= SearchNpiEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.search_npi instead.
+  # Canonical facade: client.SearchNpi.list / client.SearchNpi.load({ "id" => ... })
   def SearchNpi(data = nil)
     require_relative 'entity/search_npi_entity'
     SearchNpiEntity.new(self, data)

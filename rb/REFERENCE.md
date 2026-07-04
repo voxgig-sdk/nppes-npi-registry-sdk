@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## SearchNpiEntity
 
 ```ruby
-search_npi = client.search_npi
+search_npi = client.SearchNpi
 ```
 
 ### Fields
@@ -110,7 +110,7 @@ search_npi = client.search_npi
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.search_npi.list(nil)
+results = client.SearchNpi.list(nil)
 ```
 
 ### Common Methods

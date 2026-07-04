@@ -26,9 +26,11 @@ import { NppesNpiRegistrySDK } from '@voxgig-sdk/nppes-npi-registry'
 
 const client = new NppesNpiRegistrySDK()
 
-// List all searchnpis
-const searchnpis = await client.searchnpi.list()
-console.log(searchnpis.data)
+// List all searchnpis (returns SearchNpi[])
+const searchnpis = await client.SearchNpi().list()
+for (const searchnpi of searchnpis) {
+  console.log(searchnpi)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -83,9 +85,10 @@ from nppesnpiregistry_sdk import NppesNpiRegistrySDK
 
 client = NppesNpiRegistrySDK()
 
-# List all searchnpis
-searchnpis = client.searchnpi.list()
-print(searchnpis)
+# List all searchnpis (returns a list, raises on error)
+searchnpis = client.SearchNpi().list({})
+for searchnpi in searchnpis:
+    print(searchnpi)
 ```
 
 ### PHP
@@ -96,8 +99,8 @@ require_once 'nppesnpiregistry_sdk.php';
 
 $client = new NppesNpiRegistrySDK();
 
-// List all searchnpis (throws on error)
-$searchnpis = $client->searchnpi()->list();
+// List all searchnpis (returns an array; throws on error)
+$searchnpis = $client->SearchNpi()->list();
 print_r($searchnpis);
 ```
 
@@ -120,8 +123,8 @@ require_relative "NppesNpiRegistry_sdk"
 
 client = NppesNpiRegistrySDK.new
 
-# List all searchnpis
-searchnpis = client.searchnpi.list
+# List all searchnpis (returns an Array; raises on error)
+searchnpis = client.SearchNpi.list
 puts searchnpis
 ```
 
@@ -133,7 +136,7 @@ local sdk = require("nppes-npi-registry_sdk")
 local client = sdk.new()
 
 -- List all searchnpis
-local searchnpis, err = client:searchnpi():list()
+local searchnpis, err = client:SearchNpi():list()
 print(searchnpis)
 ```
 
@@ -146,22 +149,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = NppesNpiRegistrySDK.test()
-const result = await client.searchnpi.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const searchnpi = await client.SearchNpi().load({ id: 'test01' })
+// searchnpi is a bare SearchNpi populated with mock data
+console.log(searchnpi)
 ```
 
 ### Python
 
 ```python
 client = NppesNpiRegistrySDK.test()
-result = client.searchnpi.load({"id": "test01"})
+searchnpi = client.SearchNpi().load({"id": "test01"})
+print(searchnpi)
 ```
 
 ### PHP
 
 ```php
-$client = NppesNpiRegistrySDK::test();
-$result = $client->searchnpi()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = NppesNpiRegistrySDK::test([
+    "entity" => ["searchnpi" => ["test01" => ["id" => "test01"]]],
+]);
+$searchnpi = $client->SearchNpi()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -176,15 +184,18 @@ result, err := client.SearchNpi(nil).Load(
 ### Ruby
 
 ```ruby
-client = NppesNpiRegistrySDK.test
-result = client.searchnpi.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = NppesNpiRegistrySDK.test({
+  "entity" => { "searchnpi" => { "test01" => { "id" => "test01" } } },
+})
+searchnpi = client.SearchNpi.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:searchnpi():load({ id = "test01" })
+local result, err = client:SearchNpi():load({ id = "test01" })
 ```
 
 ## How it works
@@ -232,6 +243,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

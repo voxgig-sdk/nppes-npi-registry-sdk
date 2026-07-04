@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:search_npi():list() / client:search_npi():load({ id = ... })
-function NppesNpiRegistrySDK:search_npi(data)
+-- Idiomatic facade: client:SearchNpi():list() / client:SearchNpi():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NppesNpiRegistrySDK:SearchNpi(data)
   local EntityMod = require("entity.search_npi_entity")
   if data == nil then
     if self._search_npi == nil then
@@ -253,12 +254,6 @@ function NppesNpiRegistrySDK:search_npi(data)
     end
     return self._search_npi
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:search_npi() instead.
-function NppesNpiRegistrySDK:SearchNpi(data)
-  local EntityMod = require("entity.search_npi_entity")
   return EntityMod.new(self, data)
 end
 

@@ -31,14 +31,16 @@ from nppesnpiregistry_sdk import NppesNpiRegistrySDK
 client = NppesNpiRegistrySDK()
 ```
 
-### 2. List searchnpis
+### 2. List searchnpi records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.searchnpi.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    searchnpis = client.SearchNpi().list({})
+    for searchnpi in searchnpis:
+        print(searchnpi)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = NppesNpiRegistrySDK.test()
 
-result = client.searchnpi.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+searchnpi = client.SearchNpi().load({"id": "test01"})
+# searchnpi contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -228,7 +231,7 @@ API path: `/`
 
 ### SearchNpi
 
-Create an instance: `const search_npi = client.search_npi`
+Create an instance: `search_npi = client.SearchNpi()`
 
 #### Operations
 
@@ -252,8 +255,8 @@ Create an instance: `const search_npi = client.search_npi`
 
 #### Example: List
 
-```ts
-const search_npis = await client.search_npi.list()
+```python
+search_npis = client.SearchNpi().list({})
 ```
 
 
@@ -327,7 +330,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-searchnpi = client.searchnpi
+searchnpi = client.SearchNpi()
 searchnpi.load({"id": "example_id"})
 
 # searchnpi.data_get() now returns the loaded searchnpi data

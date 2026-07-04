@@ -204,14 +204,7 @@ class NppesNpiRegistrySDK {
 
 
 
-  _search_npi?: SearchNpiEntity
-
-  // Idiomatic facade: `client.search_npi.list()` / `client.search_npi.load({ id })`.
-  get search_npi(): SearchNpiEntity {
-    return (this._search_npi ??= new SearchNpiEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.search_npi` instead. */
+  // Entity access: `client.SearchNpi().list()` / `client.SearchNpi().load({ id })`.
   SearchNpi(data?: any) {
     const self = this
     return new SearchNpiEntity(self,data)

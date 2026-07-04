@@ -4,35 +4,37 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class SearchNpi:
-    address: Optional[list] = None
-    basic: Optional[dict] = None
-    endpoint: Optional[list] = None
-    enumeration_type: Optional[str] = None
-    identifier: Optional[list] = None
-    number: Optional[str] = None
-    other_name: Optional[list] = None
-    practice_location: Optional[list] = None
-    taxonomy: Optional[list] = None
+class SearchNpi(TypedDict, total=False):
+    address: list
+    basic: dict
+    endpoint: list
+    enumeration_type: str
+    identifier: list
+    number: str
+    other_name: list
+    practice_location: list
+    taxonomy: list
 
 
-@dataclass
-class SearchNpiListMatch:
-    address: Optional[list] = None
-    basic: Optional[dict] = None
-    endpoint: Optional[list] = None
-    enumeration_type: Optional[str] = None
-    identifier: Optional[list] = None
-    number: Optional[str] = None
-    other_name: Optional[list] = None
-    practice_location: Optional[list] = None
-    taxonomy: Optional[list] = None
-
+class SearchNpiListMatch(TypedDict, total=False):
+    address: list
+    basic: dict
+    endpoint: list
+    enumeration_type: str
+    identifier: list
+    number: str
+    other_name: list
+    practice_location: list
+    taxonomy: list

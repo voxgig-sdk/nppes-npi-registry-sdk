@@ -220,25 +220,15 @@ class NppesNpiRegistrySDK:
         }
 
 
-    @property
-    def search_npi(self):
-        """Idiomatic facade: client.search_npi.list() / client.search_npi.load({"id": ...})."""
-        from entity.search_npi_entity import SearchNpiEntity
-        cached = getattr(self, "_search_npi", None)
-        if cached is None:
-            cached = SearchNpiEntity(self, None)
-            self._search_npi = cached
-        return cached
-
-    def SearchNpi(self, data=None):
-        # Deprecated: use client.search_npi instead.
+    def SearchNpi(self, data=None) -> "SearchNpiEntity":
+        """Entity factory: client.SearchNpi().list({}) / client.SearchNpi().load({"id": ...})."""
         from entity.search_npi_entity import SearchNpiEntity
         return SearchNpiEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "NppesNpiRegistrySDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class NppesNpiRegistrySDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.search_npi_entity import SearchNpiEntity

@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## SearchNpiEntity
 
 ```lua
-local search_npi = client:search_npi(nil)
+local search_npi = client:SearchNpi(nil)
 ```
 
 ### Fields
@@ -107,7 +107,7 @@ local search_npi = client:search_npi(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:search_npi():list()
+local results, err = client:SearchNpi():list()
 ```
 
 ### Common Methods

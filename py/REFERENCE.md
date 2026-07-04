@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## SearchNpiEntity
 
 ```python
-search_npi = client.search_npi
+search_npi = client.SearchNpi()
 ```
 
 ### Fields
@@ -104,7 +104,9 @@ search_npi = client.search_npi
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.search_npi.list({})
+results = client.SearchNpi().list({})
+for search_npi in results:
+    print(search_npi)
 ```
 
 ### Common Methods
