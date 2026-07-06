@@ -26,7 +26,7 @@ class SearchNpi
     public ?array $taxonomy = null;
 }
 
-/** Match filter for SearchNpi#list (any subset of SearchNpi fields). */
+/** Request payload for SearchNpi#list. */
 class SearchNpiListMatch
 {
     public ?array $address = null;

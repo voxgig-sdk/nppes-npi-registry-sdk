@@ -116,15 +116,15 @@ const search_npi = client.SearchNpi()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `address` | ``$ARRAY`` | No |  |
-| `basic` | ``$OBJECT`` | No |  |
-| `endpoint` | ``$ARRAY`` | No |  |
-| `enumeration_type` | ``$STRING`` | No |  |
-| `identifier` | ``$ARRAY`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `other_name` | ``$ARRAY`` | No |  |
-| `practice_location` | ``$ARRAY`` | No |  |
-| `taxonomy` | ``$ARRAY`` | No |  |
+| `address` | `any[]` | No |  |
+| `basic` | `Record<string, any>` | No |  |
+| `endpoint` | `any[]` | No |  |
+| `enumeration_type` | `string` | No |  |
+| `identifier` | `any[]` | No |  |
+| `number` | `string` | No |  |
+| `other_name` | `any[]` | No |  |
+| `practice_location` | `any[]` | No |  |
+| `taxonomy` | `any[]` | No |  |
 
 ### Operations
 

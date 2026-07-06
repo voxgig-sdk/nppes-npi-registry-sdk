@@ -17,5 +17,15 @@ export interface SearchNpi {
   taxonomy?: any[]
 }
 
-export type SearchNpiListMatch = Partial<SearchNpi>
+export interface SearchNpiListMatch {
+  address?: any[]
+  basic?: Record<string, any>
+  endpoint?: any[]
+  enumeration_type?: string
+  identifier?: any[]
+  number?: string
+  other_name?: any[]
+  practice_location?: any[]
+  taxonomy?: any[]
+}
 

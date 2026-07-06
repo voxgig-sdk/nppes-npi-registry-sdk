@@ -21,8 +21,7 @@ type SearchNpi struct {
 	Taxonomy *[]any `json:"taxonomy,omitempty"`
 }
 
-// SearchNpiListMatch mirrors the search_npi fields as an all-optional match
-// filter (Go analog of Partial<SearchNpi>).
+// SearchNpiListMatch is the typed request payload for SearchNpi.ListTyped.
 type SearchNpiListMatch struct {
 	Address *[]any `json:"address,omitempty"`
 	Basic *map[string]any `json:"basic,omitempty"`

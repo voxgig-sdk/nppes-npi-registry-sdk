@@ -66,8 +66,12 @@ class SearchNpiEntity:
     
 
     
-    def list(self, reqmatch: SearchNpiListMatch, ctrl=None) -> list[SearchNpi]:
+    def list(self, reqmatch=None, ctrl=None) -> list[SearchNpi]:
         utility = self._utility
+        # reqmatch is optional: an omitted match lists all records. Treat None
+        # as an empty match so client.SearchNpi().list() works with no args.
+        if reqmatch is None:
+            reqmatch = {}
         ctx = utility.make_context({
             "opname": "list",
             "ctrl": ctrl,

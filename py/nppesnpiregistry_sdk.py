@@ -221,7 +221,7 @@ class NppesNpiRegistrySDK:
 
 
     def SearchNpi(self, data=None) -> "SearchNpiEntity":
-        """Entity factory: client.SearchNpi().list({}) / client.SearchNpi().load({"id": ...})."""
+        """Entity factory: client.SearchNpi().list() / client.SearchNpi().load({"id": ...})."""
         from entity.search_npi_entity import SearchNpiEntity
         return SearchNpiEntity(self, data)
 

@@ -8,7 +8,7 @@ Complete API reference for the NppesNpiRegistry Python SDK.
 ### Constructor
 
 ```python
-from nppes-npi-registry_sdk import NppesNpiRegistrySDK
+from nppesnpiregistry_sdk import NppesNpiRegistrySDK
 
 client = NppesNpiRegistrySDK(options)
 ```
@@ -87,24 +87,24 @@ search_npi = client.SearchNpi()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `address` | ``$ARRAY`` | No |  |
-| `basic` | ``$OBJECT`` | No |  |
-| `endpoint` | ``$ARRAY`` | No |  |
-| `enumeration_type` | ``$STRING`` | No |  |
-| `identifier` | ``$ARRAY`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `other_name` | ``$ARRAY`` | No |  |
-| `practice_location` | ``$ARRAY`` | No |  |
-| `taxonomy` | ``$ARRAY`` | No |  |
+| `address` | `list` | No |  |
+| `basic` | `dict` | No |  |
+| `endpoint` | `list` | No |  |
+| `enumeration_type` | `str` | No |  |
+| `identifier` | `list` | No |  |
+| `number` | `str` | No |  |
+| `other_name` | `list` | No |  |
+| `practice_location` | `list` | No |  |
+| `taxonomy` | `list` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.SearchNpi().list({})
+results = client.SearchNpi().list()
 for search_npi in results:
     print(search_npi)
 ```

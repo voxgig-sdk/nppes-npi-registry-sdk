@@ -90,15 +90,15 @@ local search_npi = client:SearchNpi(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `address` | ``$ARRAY`` | No |  |
-| `basic` | ``$OBJECT`` | No |  |
-| `endpoint` | ``$ARRAY`` | No |  |
-| `enumeration_type` | ``$STRING`` | No |  |
-| `identifier` | ``$ARRAY`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `other_name` | ``$ARRAY`` | No |  |
-| `practice_location` | ``$ARRAY`` | No |  |
-| `taxonomy` | ``$ARRAY`` | No |  |
+| `address` | `table` | No |  |
+| `basic` | `table` | No |  |
+| `endpoint` | `table` | No |  |
+| `enumeration_type` | `string` | No |  |
+| `identifier` | `table` | No |  |
+| `number` | `string` | No |  |
+| `other_name` | `table` | No |  |
+| `practice_location` | `table` | No |  |
+| `taxonomy` | `table` | No |  |
 
 ### Operations
 

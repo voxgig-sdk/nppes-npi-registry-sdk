@@ -18,6 +18,15 @@
 ---@field taxonomy? table
 
 ---@class SearchNpiListMatch
+---@field address? table
+---@field basic? table
+---@field endpoint? table
+---@field enumeration_type? string
+---@field identifier? table
+---@field number? string
+---@field other_name? table
+---@field practice_location? table
+---@field taxonomy? table
 
 local M = {}
 

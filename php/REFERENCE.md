@@ -8,7 +8,7 @@ Complete API reference for the NppesNpiRegistry PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/nppes-npi-registry_sdk.php';
+require_once __DIR__ . '/nppesnpiregistry_sdk.php';
 
 $client = new NppesNpiRegistrySDK($options);
 ```
@@ -45,11 +45,11 @@ $client = NppesNpiRegistrySDK::test();
 
 Create a new `SearchNpiEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): NppesNpiRegistryUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,41 +92,41 @@ $search_npi = $client->SearchNpi();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `address` | ``$ARRAY`` | No |  |
-| `basic` | ``$OBJECT`` | No |  |
-| `endpoint` | ``$ARRAY`` | No |  |
-| `enumeration_type` | ``$STRING`` | No |  |
-| `identifier` | ``$ARRAY`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `other_name` | ``$ARRAY`` | No |  |
-| `practice_location` | ``$ARRAY`` | No |  |
-| `taxonomy` | ``$ARRAY`` | No |  |
+| `address` | `array` | No |  |
+| `basic` | `array` | No |  |
+| `endpoint` | `array` | No |  |
+| `enumeration_type` | `string` | No |  |
+| `identifier` | `array` | No |  |
+| `number` | `string` | No |  |
+| `other_name` | `array` | No |  |
+| `practice_location` | `array` | No |  |
+| `taxonomy` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->SearchNpi()->list([]);
+$results = $client->SearchNpi()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -135,7 +135,7 @@ Set the entity match criteria.
 Create a new `SearchNpiEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

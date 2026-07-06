@@ -49,7 +49,7 @@ SearchNpi = Struct.new(
   keyword_init: true
 )
 
-# Match filter for SearchNpi#list (any subset of SearchNpi fields).
+# Request payload for SearchNpi#list.
 #
 # @!attribute [rw] address
 #   @return [Array, nil]
