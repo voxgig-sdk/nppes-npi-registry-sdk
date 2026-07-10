@@ -90,7 +90,8 @@ same parameters as `Direct()`.
 ## SearchNpiEntity
 
 ```go
-search_npi := client.SearchNpi(nil)
+searchNpi := client.SearchNpi(nil)
+fmt.Println(searchNpi.GetName()) // "search_npi"
 ```
 
 ### Fields
@@ -115,6 +116,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.SearchNpi(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods

@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -382,14 +379,17 @@
           "url": "https://npiregistry.cms.hhs.gov/api-page"
         },
         "description": "The NPPES API provides a real-time alternative to accessing NPPES public data, allowing users to retrieve detailed information about healthcare providers using their National Provider Identifier (NPI). Unlike the traditional method of batch downloads, this API facilitates faster and more efficient queries for provider data. The API currently operates with version 2.1, enhancing accessibility and ease of use.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "NPPES NPI Registry API Server",
             "url": "https://npiregistry.cms.hhs.gov/api"
           }
         ],
+        "summary": "The NPPES API provides a real-time alternative to accessing NPPES public data, allowing users to retrieve detailed information about healthcare providers using their National Provider Identifier (NPI).",
         "title": "NPPES NPI Registry",
-        "version": "2.1"
+        "version": "2.1",
+        "website": "https://npiregistry.cms.hhs.gov/api-page"
       },
       "option": {},
       "target": {
@@ -442,6 +442,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -492,6 +495,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

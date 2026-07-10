@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // List searchnpi records — the value is the array of records itself.
-    searchnpis, err := client.SearchNpi(nil).List(nil, nil)
+    // List searchNpi records — the value is the array of records itself.
+    searchNpis, err := client.SearchNpi(nil).List(nil, nil)
     if err != nil {
         panic(err)
     }
-    for _, item := range searchnpis.([]any) {
+    for _, item := range searchNpis.([]any) {
         fmt.Println(item)
     }
 }
@@ -137,13 +137,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-searchnpi, err := client.SearchNpi(nil).List(
+searchNpi, err := client.SearchNpi(nil).List(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(searchnpi) // the returned mock data
+fmt.Println(searchNpi) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -247,9 +247,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    searchnpi, err := client.SearchNpi(nil).List(map[string]any{/* fields */}, nil)
+    searchNpi, err := client.SearchNpi(nil).List(map[string]any{/* fields */}, nil)
     if err != nil { /* handle */ }
-    // searchnpi is the returned record
+    // searchNpi is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -281,7 +281,7 @@ API path: `/`
 
 ### SearchNpi
 
-Create an instance: `search_npi := client.SearchNpi(nil)`
+Create an instance: `searchNpi := client.SearchNpi(nil)`
 
 #### Operations
 
@@ -306,11 +306,11 @@ Create an instance: `search_npi := client.SearchNpi(nil)`
 #### Example: List
 
 ```go
-search_npis, err := client.SearchNpi(nil).List(nil, nil)
+searchNpis, err := client.SearchNpi(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(search_npis) // the array of records
+fmt.Println(searchNpis) // the array of records
 ```
 
 
