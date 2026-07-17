@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- NppesNpiRegistry SDK exists test
 
 local sdk = require("nppes-npi-registry_sdk")
 
