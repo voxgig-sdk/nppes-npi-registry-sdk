@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ NppesNpiRegistryUtility.registrar = ->(u) {
   u.prepare_params = NppesNpiRegistryUtilities::PrepareParams
   u.prepare_path = NppesNpiRegistryUtilities::PreparePath
   u.prepare_query = NppesNpiRegistryUtilities::PrepareQuery
+  u.graphql_body = NppesNpiRegistryUtilities::GraphqlBody
+  u.graphql_errors = NppesNpiRegistryUtilities::GraphqlErrors
   u.result_basic = NppesNpiRegistryUtilities::ResultBasic
   u.result_body = NppesNpiRegistryUtilities::ResultBody
   u.result_headers = NppesNpiRegistryUtilities::ResultHeaders

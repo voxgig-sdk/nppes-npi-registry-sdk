@@ -23,8 +23,8 @@ module NppesNpiRegistryTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("NPPESNPIREGISTRY_TEST_LIVE")
-    override = getenv("NPPESNPIREGISTRY_TEST_OVERRIDE")
+    live = getenv("NPPES_NPI_REGISTRY_TEST_LIVE")
+    override = getenv("NPPES_NPI_REGISTRY_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module NppesNpiRegistryTestRunner
       end
     end
 
-    explain = getenv("NPPESNPIREGISTRY_TEST_EXPLAIN")
-    m["NPPESNPIREGISTRY_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("NPPES_NPI_REGISTRY_TEST_EXPLAIN")
+    m["NPPES_NPI_REGISTRY_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

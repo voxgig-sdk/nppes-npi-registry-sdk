@@ -61,11 +61,11 @@ function search_npi_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID"] = {},
-    ["NPPESNPIREGISTRY_TEST_LIVE"] = "FALSE",
+    ["NPPES_NPI_REGISTRY_TEST_SEARCH_NPI_ENTID"] = {},
+    ["NPPES_NPI_REGISTRY_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["NPPESNPIREGISTRY_TEST_LIVE"] == "TRUE"
+  local live = env["NPPES_NPI_REGISTRY_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

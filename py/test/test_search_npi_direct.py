@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from nppesnpiregistry_sdk.utility.voxgig_struct import voxgig_struct as vs
 from nppesnpiregistry_sdk import NppesNpiRegistrySDK
-from core import helpers
+from nppesnpiregistry_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _search_npi_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID": {},
-        "NPPESNPIREGISTRY_TEST_LIVE": "FALSE",
+        "NPPES_NPI_REGISTRY_TEST_SEARCH_NPI_ENTID": {},
+        "NPPES_NPI_REGISTRY_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("NPPESNPIREGISTRY_TEST_LIVE") == "TRUE"
+    live = env.get("NPPES_NPI_REGISTRY_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

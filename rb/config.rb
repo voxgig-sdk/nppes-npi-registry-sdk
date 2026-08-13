@@ -27,7 +27,7 @@ module NppesNpiRegistryConfig
           "fields" => [
             {
               "active" => true,
-              "name" => "address",
+              "name" => "addresses",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 0,
@@ -41,7 +41,7 @@ module NppesNpiRegistryConfig
             },
             {
               "active" => true,
-              "name" => "endpoint",
+              "name" => "endpoints",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 2,
@@ -55,7 +55,7 @@ module NppesNpiRegistryConfig
             },
             {
               "active" => true,
-              "name" => "identifier",
+              "name" => "identifiers",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 4,
@@ -69,21 +69,21 @@ module NppesNpiRegistryConfig
             },
             {
               "active" => true,
-              "name" => "other_name",
+              "name" => "other_names",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 6,
             },
             {
               "active" => true,
-              "name" => "practice_location",
+              "name" => "practiceLocations",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 7,
             },
             {
               "active" => true,
-              "name" => "taxonomy",
+              "name" => "taxonomies",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 8,
@@ -225,6 +225,7 @@ module NppesNpiRegistryConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/",
                   "parts" => [],
@@ -249,7 +250,7 @@ module NppesNpiRegistryConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.results`",
                   },
                   "index$" => 0,
                 },

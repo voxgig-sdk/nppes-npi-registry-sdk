@@ -260,15 +260,15 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"address"` |  |
+| `"addresses"` |  |
 | `"basic"` |  |
-| `"endpoint"` |  |
+| `"endpoints"` |  |
 | `"enumeration_type"` |  |
-| `"identifier"` |  |
+| `"identifiers"` |  |
 | `"number"` |  |
-| `"other_name"` |  |
-| `"practice_location"` |  |
-| `"taxonomy"` |  |
+| `"other_names"` |  |
+| `"practiceLocations"` |  |
+| `"taxonomies"` |  |
 
 Operations: List.
 
@@ -293,15 +293,15 @@ Create an instance: `searchNpi := client.SearchNpi(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `address` | `[]any` |  |
+| `addresses` | `[]any` |  |
 | `basic` | `map[string]any` |  |
-| `endpoint` | `[]any` |  |
+| `endpoints` | `[]any` |  |
 | `enumeration_type` | `string` |  |
-| `identifier` | `[]any` |  |
+| `identifiers` | `[]any` |  |
 | `number` | `string` |  |
-| `other_name` | `[]any` |  |
-| `practice_location` | `[]any` |  |
-| `taxonomy` | `[]any` |  |
+| `other_names` | `[]any` |  |
+| `practiceLocations` | `[]any` |  |
+| `taxonomies` | `[]any` |  |
 
 #### Example: List
 

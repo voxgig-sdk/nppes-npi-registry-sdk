@@ -43,8 +43,8 @@ class NppesNpiRegistryTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('NPPESNPIREGISTRY_TEST_LIVE');
-        $override = self::getenv('NPPESNPIREGISTRY_TEST_OVERRIDE');
+        $live = self::getenv('NPPES_NPI_REGISTRY_TEST_LIVE');
+        $override = self::getenv('NPPES_NPI_REGISTRY_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class NppesNpiRegistryTestRunner
             }
         }
 
-        $explain = self::getenv('NPPESNPIREGISTRY_TEST_EXPLAIN');
+        $explain = self::getenv('NPPES_NPI_REGISTRY_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['NPPESNPIREGISTRY_TEST_EXPLAIN'] = $explain;
+            $m['NPPES_NPI_REGISTRY_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

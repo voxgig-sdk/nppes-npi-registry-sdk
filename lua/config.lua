@@ -26,7 +26,7 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "address",
+            ["name"] = "addresses",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 0,
@@ -40,7 +40,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "endpoint",
+            ["name"] = "endpoints",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 2,
@@ -54,7 +54,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "identifier",
+            ["name"] = "identifiers",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 4,
@@ -68,21 +68,21 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "other_name",
+            ["name"] = "other_names",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 6,
           },
           {
             ["active"] = true,
-            ["name"] = "practice_location",
+            ["name"] = "practiceLocations",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 7,
           },
           {
             ["active"] = true,
-            ["name"] = "taxonomy",
+            ["name"] = "taxonomies",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 8,
@@ -224,6 +224,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/",
                 ["parts"] = {},
@@ -248,7 +249,7 @@ local function make_config()
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.results`",
                 },
                 ["index$"] = 0,
               },

@@ -6,26 +6,26 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface SearchNpi {
-  address?: any[]
+  addresses?: any[]
   basic?: Record<string, any>
-  endpoint?: any[]
+  endpoints?: any[]
   enumeration_type?: string
-  identifier?: any[]
+  identifiers?: any[]
   number?: string
-  other_name?: any[]
-  practice_location?: any[]
-  taxonomy?: any[]
+  other_names?: any[]
+  practiceLocations?: any[]
+  taxonomies?: any[]
 }
 
 export interface SearchNpiListMatch {
-  address?: any[]
+  addresses?: any[]
   basic?: Record<string, any>
-  endpoint?: any[]
+  endpoints?: any[]
   enumeration_type?: string
-  identifier?: any[]
+  identifiers?: any[]
   number?: string
-  other_name?: any[]
-  practice_location?: any[]
-  taxonomy?: any[]
+  other_names?: any[]
+  practiceLocations?: any[]
+  taxonomies?: any[]
 }
 

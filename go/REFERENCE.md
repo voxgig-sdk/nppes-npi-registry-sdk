@@ -98,15 +98,15 @@ fmt.Println(searchNpi.GetName()) // "search_npi"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `address` | `[]any` | No |  |
+| `addresses` | `[]any` | No |  |
 | `basic` | `map[string]any` | No |  |
-| `endpoint` | `[]any` | No |  |
+| `endpoints` | `[]any` | No |  |
 | `enumeration_type` | `string` | No |  |
-| `identifier` | `[]any` | No |  |
+| `identifiers` | `[]any` | No |  |
 | `number` | `string` | No |  |
-| `other_name` | `[]any` | No |  |
-| `practice_location` | `[]any` | No |  |
-| `taxonomy` | `[]any` | No |  |
+| `other_names` | `[]any` | No |  |
+| `practiceLocations` | `[]any` | No |  |
+| `taxonomies` | `[]any` | No |  |
 
 ### Operations
 

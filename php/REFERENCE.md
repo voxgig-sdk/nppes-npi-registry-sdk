@@ -92,15 +92,15 @@ $search_npi = $client->SearchNpi();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `address` | `array` | No |  |
+| `addresses` | `array` | No |  |
 | `basic` | `array` | No |  |
-| `endpoint` | `array` | No |  |
+| `endpoints` | `array` | No |  |
 | `enumeration_type` | `string` | No |  |
-| `identifier` | `array` | No |  |
+| `identifiers` | `array` | No |  |
 | `number` | `string` | No |  |
-| `other_name` | `array` | No |  |
-| `practice_location` | `array` | No |  |
-| `taxonomy` | `array` | No |  |
+| `other_names` | `array` | No |  |
+| `practiceLocations` | `array` | No |  |
+| `taxonomies` | `array` | No |  |
 
 ### Operations
 

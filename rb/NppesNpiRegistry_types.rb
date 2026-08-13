@@ -10,83 +10,83 @@
 
 # SearchNpi entity data model.
 #
-# @!attribute [rw] address
+# @!attribute [rw] addresses
 #   @return [Array, nil]
 #
 # @!attribute [rw] basic
 #   @return [Hash, nil]
 #
-# @!attribute [rw] endpoint
+# @!attribute [rw] endpoints
 #   @return [Array, nil]
 #
 # @!attribute [rw] enumeration_type
 #   @return [String, nil]
 #
-# @!attribute [rw] identifier
+# @!attribute [rw] identifiers
 #   @return [Array, nil]
 #
 # @!attribute [rw] number
 #   @return [String, nil]
 #
-# @!attribute [rw] other_name
+# @!attribute [rw] other_names
 #   @return [Array, nil]
 #
-# @!attribute [rw] practice_location
+# @!attribute [rw] practiceLocations
 #   @return [Array, nil]
 #
-# @!attribute [rw] taxonomy
+# @!attribute [rw] taxonomies
 #   @return [Array, nil]
 SearchNpi = Struct.new(
-  :address,
+  :addresses,
   :basic,
-  :endpoint,
+  :endpoints,
   :enumeration_type,
-  :identifier,
+  :identifiers,
   :number,
-  :other_name,
-  :practice_location,
-  :taxonomy,
+  :other_names,
+  :practiceLocations,
+  :taxonomies,
   keyword_init: true
 )
 
 # Request payload for SearchNpi#list.
 #
-# @!attribute [rw] address
+# @!attribute [rw] addresses
 #   @return [Array, nil]
 #
 # @!attribute [rw] basic
 #   @return [Hash, nil]
 #
-# @!attribute [rw] endpoint
+# @!attribute [rw] endpoints
 #   @return [Array, nil]
 #
 # @!attribute [rw] enumeration_type
 #   @return [String, nil]
 #
-# @!attribute [rw] identifier
+# @!attribute [rw] identifiers
 #   @return [Array, nil]
 #
 # @!attribute [rw] number
 #   @return [String, nil]
 #
-# @!attribute [rw] other_name
+# @!attribute [rw] other_names
 #   @return [Array, nil]
 #
-# @!attribute [rw] practice_location
+# @!attribute [rw] practiceLocations
 #   @return [Array, nil]
 #
-# @!attribute [rw] taxonomy
+# @!attribute [rw] taxonomies
 #   @return [Array, nil]
 SearchNpiListMatch = Struct.new(
-  :address,
+  :addresses,
   :basic,
-  :endpoint,
+  :endpoints,
   :enumeration_type,
-  :identifier,
+  :identifiers,
   :number,
-  :other_name,
-  :practice_location,
-  :taxonomy,
+  :other_names,
+  :practiceLocations,
+  :taxonomies,
   keyword_init: true
 )
 

@@ -37,7 +37,7 @@ begin
   # list returns an Array of SearchNpi records — iterate directly.
   searchnpis = client.SearchNpi.list
   searchnpis.each do |item|
-    puts "#{item["address"]}"
+    puts "#{item["addresses"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = NppesNpiRegistrySDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 searchnpi = client.SearchNpi.list()
 puts searchnpi
 ```
@@ -236,15 +237,15 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `address` |  |
+| `addresses` |  |
 | `basic` |  |
-| `endpoint` |  |
+| `endpoints` |  |
 | `enumeration_type` |  |
-| `identifier` |  |
+| `identifiers` |  |
 | `number` |  |
-| `other_name` |  |
-| `practice_location` |  |
-| `taxonomy` |  |
+| `other_names` |  |
+| `practiceLocations` |  |
+| `taxonomies` |  |
 
 Operations: List.
 
@@ -269,15 +270,15 @@ Create an instance: `search_npi = client.SearchNpi`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `address` | `Array` |  |
+| `addresses` | `Array` |  |
 | `basic` | `Hash` |  |
-| `endpoint` | `Array` |  |
+| `endpoints` | `Array` |  |
 | `enumeration_type` | `String` |  |
-| `identifier` | `Array` |  |
+| `identifiers` | `Array` |  |
 | `number` | `String` |  |
-| `other_name` | `Array` |  |
-| `practice_location` | `Array` |  |
-| `taxonomy` | `Array` |  |
+| `other_names` | `Array` |  |
+| `practiceLocations` | `Array` |  |
+| `taxonomies` | `Array` |  |
 
 #### Example: List
 

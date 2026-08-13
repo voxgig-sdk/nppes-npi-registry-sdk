@@ -124,7 +124,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = NppesNpiRegistrySDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 searchnpi = client.SearchNpi().list()
 # searchnpi contains the mock response record
 ```
@@ -220,7 +221,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -242,15 +243,15 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `address` |  |
+| `addresses` |  |
 | `basic` |  |
-| `endpoint` |  |
+| `endpoints` |  |
 | `enumeration_type` |  |
-| `identifier` |  |
+| `identifiers` |  |
 | `number` |  |
-| `other_name` |  |
-| `practice_location` |  |
-| `taxonomy` |  |
+| `other_names` |  |
+| `practiceLocations` |  |
+| `taxonomies` |  |
 
 Operations: List.
 
@@ -275,15 +276,15 @@ Create an instance: `search_npi = client.SearchNpi()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `address` | `list` |  |
+| `addresses` | `list` |  |
 | `basic` | `dict` |  |
-| `endpoint` | `list` |  |
+| `endpoints` | `list` |  |
 | `enumeration_type` | `str` |  |
-| `identifier` | `list` |  |
+| `identifiers` | `list` |  |
 | `number` | `str` |  |
-| `other_name` | `list` |  |
-| `practice_location` | `list` |  |
-| `taxonomy` | `list` |  |
+| `other_names` | `list` |  |
+| `practiceLocations` | `list` |  |
+| `taxonomies` | `list` |  |
 
 #### Example: List
 

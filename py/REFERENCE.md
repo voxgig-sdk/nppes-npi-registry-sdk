@@ -87,15 +87,15 @@ search_npi = client.SearchNpi()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `address` | `list` | No |  |
+| `addresses` | `list` | No |  |
 | `basic` | `dict` | No |  |
-| `endpoint` | `list` | No |  |
+| `endpoints` | `list` | No |  |
 | `enumeration_type` | `str` | No |  |
-| `identifier` | `list` | No |  |
+| `identifiers` | `list` | No |  |
 | `number` | `str` | No |  |
-| `other_name` | `list` | No |  |
-| `practice_location` | `list` | No |  |
-| `taxonomy` | `list` | No |  |
+| `other_names` | `list` | No |  |
+| `practiceLocations` | `list` | No |  |
+| `taxonomies` | `list` | No |  |
 
 ### Operations
 

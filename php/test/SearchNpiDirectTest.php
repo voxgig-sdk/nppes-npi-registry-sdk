@@ -66,11 +66,11 @@ function search_npi_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID" => [],
-        "NPPESNPIREGISTRY_TEST_LIVE" => "FALSE",
+        "NPPES_NPI_REGISTRY_TEST_SEARCH_NPI_ENTID" => [],
+        "NPPES_NPI_REGISTRY_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["NPPESNPIREGISTRY_TEST_LIVE"] === "TRUE";
+    $live = $env["NPPES_NPI_REGISTRY_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

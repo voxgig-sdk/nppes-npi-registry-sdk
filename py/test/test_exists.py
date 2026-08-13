@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# NppesNpiRegistry SDK exists test
 
 import pytest
 from nppesnpiregistry_sdk import NppesNpiRegistrySDK

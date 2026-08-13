@@ -15,28 +15,28 @@ declare(strict_types=1);
 /** SearchNpi entity data model. */
 class SearchNpi
 {
-    public ?array $address = null;
+    public ?array $addresses = null;
     public ?array $basic = null;
-    public ?array $endpoint = null;
+    public ?array $endpoints = null;
     public ?string $enumeration_type = null;
-    public ?array $identifier = null;
+    public ?array $identifiers = null;
     public ?string $number = null;
-    public ?array $other_name = null;
-    public ?array $practice_location = null;
-    public ?array $taxonomy = null;
+    public ?array $other_names = null;
+    public ?array $practiceLocations = null;
+    public ?array $taxonomies = null;
 }
 
 /** Request payload for SearchNpi#list. */
 class SearchNpiListMatch
 {
-    public ?array $address = null;
+    public ?array $addresses = null;
     public ?array $basic = null;
-    public ?array $endpoint = null;
+    public ?array $endpoints = null;
     public ?string $enumeration_type = null;
-    public ?array $identifier = null;
+    public ?array $identifiers = null;
     public ?string $number = null;
-    public ?array $other_name = null;
-    public ?array $practice_location = null;
-    public ?array $taxonomy = null;
+    public ?array $other_names = null;
+    public ?array $practiceLocations = null;
+    public ?array $taxonomies = null;
 }
 

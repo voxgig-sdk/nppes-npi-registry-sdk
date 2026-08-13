@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import NppesNpiRegistryControl
-from core.error import NppesNpiRegistryError
-from core.result import NppesNpiRegistryResult
-from core.spec import NppesNpiRegistrySpec
+from nppesnpiregistry_sdk.config import make_config
+from nppesnpiregistry_sdk.features import _make_feature
+from nppesnpiregistry_sdk.core.control import NppesNpiRegistryControl
+from nppesnpiregistry_sdk.core.error import NppesNpiRegistryError
+from nppesnpiregistry_sdk.core.result import NppesNpiRegistryResult
+from nppesnpiregistry_sdk.core.spec import NppesNpiRegistrySpec
 
 
 # True when this SDK was generated with the named feature.

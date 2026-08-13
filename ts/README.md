@@ -35,7 +35,9 @@ const client = new NppesNpiRegistrySDK()
 
 ### 2. List searchnpi records
 
-`list()` resolves to an array of SearchNpi objects — iterate it directly:
+`list()` resolves to an array of SearchNpi ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const searchnpis = await client.SearchNpi().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = NppesNpiRegistrySDK.test()
 
 const searchnpi = await client.SearchNpi().list()
-// searchnpi is a bare entity populated with mock response data
+// searchnpi is the entity, populated with mock response data
+// — call searchnpi.data() for the record itself
 console.log(searchnpi)
 ```
 
@@ -284,15 +287,15 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `address` |  |
+| `addresses` |  |
 | `basic` |  |
-| `endpoint` |  |
+| `endpoints` |  |
 | `enumeration_type` |  |
-| `identifier` |  |
+| `identifiers` |  |
 | `number` |  |
-| `other_name` |  |
-| `practice_location` |  |
-| `taxonomy` |  |
+| `other_names` |  |
+| `practiceLocations` |  |
+| `taxonomies` |  |
 
 Operations: list.
 
@@ -317,15 +320,15 @@ Create an instance: `const search_npi = client.SearchNpi()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `address` | `any[]` |  |
+| `addresses` | `any[]` |  |
 | `basic` | `Record<string, any>` |  |
-| `endpoint` | `any[]` |  |
+| `endpoints` | `any[]` |  |
 | `enumeration_type` | `string` |  |
-| `identifier` | `any[]` |  |
+| `identifiers` | `any[]` |  |
 | `number` | `string` |  |
-| `other_name` | `any[]` |  |
-| `practice_location` | `any[]` |  |
-| `taxonomy` | `any[]` |  |
+| `other_names` | `any[]` |  |
+| `practiceLocations` | `any[]` |  |
+| `taxonomies` | `any[]` |  |
 
 #### Example: List
 

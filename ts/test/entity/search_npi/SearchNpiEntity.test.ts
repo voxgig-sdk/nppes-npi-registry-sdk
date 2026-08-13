@@ -26,8 +26,8 @@ import {
 describe('SearchNpiEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when NPPESNPIREGISTRY_TEST_LIVE=TRUE.
-  afterEach(liveDelay('NPPESNPIREGISTRY_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when NPPES_NPI_REGISTRY_TEST_LIVE=TRUE.
+  afterEach(liveDelay('NPPES_NPI_REGISTRY_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = NppesNpiRegistrySDK.test()
@@ -63,7 +63,7 @@ describe('SearchNpiEntity', async () => {
     const search_npi_ref01_ent = client.SearchNpi()
     const search_npi_ref01_match: any = {}
 
-    const search_npi_ref01_list = await search_npi_ref01_ent.list(search_npi_ref01_match)
+    const search_npi_ref01_list = (await search_npi_ref01_ent.list(search_npi_ref01_match)).map((e: any) => e.data())
 
 
   })

@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ NppesNpiRegistryUtility::setRegistrar(function (NppesNpiRegistryUtility $u): voi
     $u->prepare_params = [NppesNpiRegistryPrepareParams::class, 'call'];
     $u->prepare_path = [NppesNpiRegistryPreparePath::class, 'call'];
     $u->prepare_query = [NppesNpiRegistryPrepareQuery::class, 'call'];
+    $u->graphql_body = [NppesNpiRegistryGraphql::class, 'body'];
+    $u->graphql_errors = [NppesNpiRegistryGraphql::class, 'errors'];
     $u->result_basic = [NppesNpiRegistryResultBasic::class, 'call'];
     $u->result_body = [NppesNpiRegistryResultBody::class, 'call'];
     $u->result_headers = [NppesNpiRegistryResultHeaders::class, 'call'];

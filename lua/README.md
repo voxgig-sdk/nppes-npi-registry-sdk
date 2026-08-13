@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local search_npi, err = client:SearchNpi():load()
+    local search_npi, err = client:SearchNpi():list()
     if err then error(err) end
-    -- search_npi is the loaded record
+    -- search_npi is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -231,15 +231,15 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `address` |  |
+| `addresses` |  |
 | `basic` |  |
-| `endpoint` |  |
+| `endpoints` |  |
 | `enumeration_type` |  |
-| `identifier` |  |
+| `identifiers` |  |
 | `number` |  |
-| `other_name` |  |
-| `practice_location` |  |
-| `taxonomy` |  |
+| `other_names` |  |
+| `practiceLocations` |  |
+| `taxonomies` |  |
 
 Operations: List.
 
@@ -264,15 +264,15 @@ Create an instance: `local search_npi = client:SearchNpi(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `address` | `table` |  |
+| `addresses` | `table` |  |
 | `basic` | `table` |  |
-| `endpoint` | `table` |  |
+| `endpoints` | `table` |  |
 | `enumeration_type` | `string` |  |
-| `identifier` | `table` |  |
+| `identifiers` | `table` |  |
 | `number` | `string` |  |
-| `other_name` | `table` |  |
-| `practice_location` | `table` |  |
-| `taxonomy` | `table` |  |
+| `other_names` | `table` |  |
+| `practiceLocations` | `table` |  |
+| `taxonomies` | `table` |  |
 
 #### Example: List
 

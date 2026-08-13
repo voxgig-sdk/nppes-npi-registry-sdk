@@ -37,7 +37,7 @@ class SearchNpiEntity extends NppesNpiRegistryEntityBase<SearchNpi> {
 
 
 
-  async list(this: any, reqmatch?: SearchNpiListMatch, ctrl?: Control): Promise<SearchNpi[]> {
+  async list(this: any, reqmatch?: SearchNpiListMatch, ctrl?: Control): Promise<SearchNpiEntity[]> {
 
     const utility = this._utility
 

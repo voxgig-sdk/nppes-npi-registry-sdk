@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import NppesNpiRegistrySDK
-from core.error import NppesNpiRegistryError
-from core.result import NppesNpiRegistryResult
-from core.response import NppesNpiRegistryResponse
-from core.spec import NppesNpiRegistrySpec
-from feature.base_feature import NppesNpiRegistryBaseFeature
+from projectname_sdk.core.error import NppesNpiRegistryError
+from projectname_sdk.core.result import NppesNpiRegistryResult
+from projectname_sdk.core.response import NppesNpiRegistryResponse
+from projectname_sdk.core.spec import NppesNpiRegistrySpec
+from projectname_sdk.feature.base_feature import NppesNpiRegistryBaseFeature
 
 
 def _client():

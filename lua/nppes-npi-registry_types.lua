@@ -7,26 +7,26 @@
 -- edit by hand.
 
 ---@class SearchNpi
----@field address? table
+---@field addresses? table
 ---@field basic? table
----@field endpoint? table
+---@field endpoints? table
 ---@field enumeration_type? string
----@field identifier? table
+---@field identifiers? table
 ---@field number? string
----@field other_name? table
----@field practice_location? table
----@field taxonomy? table
+---@field other_names? table
+---@field practiceLocations? table
+---@field taxonomies? table
 
 ---@class SearchNpiListMatch
----@field address? table
+---@field addresses? table
 ---@field basic? table
----@field endpoint? table
+---@field endpoints? table
 ---@field enumeration_type? string
----@field identifier? table
+---@field identifiers? table
 ---@field number? string
----@field other_name? table
----@field practice_location? table
----@field taxonomy? table
+---@field other_names? table
+---@field practiceLocations? table
+---@field taxonomies? table
 
 local M = {}
 

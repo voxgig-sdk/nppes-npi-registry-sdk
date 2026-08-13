@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'NppesNpiRegistry',
   }
 
 
@@ -56,7 +56,7 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "address",
+          "name": "addresses",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 0
@@ -70,7 +70,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "endpoint",
+          "name": "endpoints",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 2
@@ -84,7 +84,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "identifier",
+          "name": "identifiers",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 4
@@ -98,21 +98,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "other_name",
+          "name": "other_names",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "practice_location",
+          "name": "practiceLocations",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "taxonomy",
+          "name": "taxonomies",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 8
@@ -254,6 +254,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/",
               "parts": [],
@@ -278,7 +279,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.results`"
               },
               "index$": 0
             }

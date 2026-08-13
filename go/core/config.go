@@ -26,7 +26,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "address",
+						"name": "addresses",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 0,
@@ -40,7 +40,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "endpoint",
+						"name": "endpoints",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 2,
@@ -54,7 +54,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "identifier",
+						"name": "identifiers",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 4,
@@ -68,21 +68,21 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "other_name",
+						"name": "other_names",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 6,
 					},
 					map[string]any{
 						"active": true,
-						"name": "practice_location",
+						"name": "practiceLocations",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 7,
 					},
 					map[string]any{
 						"active": true,
-						"name": "taxonomy",
+						"name": "taxonomies",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 8,
@@ -224,6 +224,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/",
 								"parts": []any{},
@@ -248,12 +249,11 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.results`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

@@ -2,52 +2,52 @@
   "existing": {
     "search_npi": {
       "SEARCH_NPI00": {
-        "address": [],
+        "addresses": [],
         "basic": {},
-        "endpoint": [],
+        "endpoints": [],
         "enumeration_type": "s5d",
-        "identifier": [],
+        "identifiers": [],
         "number": "s5f",
-        "other_name": [],
-        "practice_location": [],
-        "taxonomy": []
+        "other_names": [],
+        "practiceLocations": [],
+        "taxonomies": []
       },
       "SEARCH_NPI01": {
-        "address": [],
+        "addresses": [],
         "basic": {},
-        "endpoint": [],
+        "endpoints": [],
         "enumeration_type": "sb7",
-        "identifier": [],
+        "identifiers": [],
         "number": "sb9",
-        "other_name": [],
-        "practice_location": [],
-        "taxonomy": []
+        "other_names": [],
+        "practiceLocations": [],
+        "taxonomies": []
       },
       "SEARCH_NPI02": {
-        "address": [],
+        "addresses": [],
         "basic": {},
-        "endpoint": [],
+        "endpoints": [],
         "enumeration_type": "s111",
-        "identifier": [],
+        "identifiers": [],
         "number": "s113",
-        "other_name": [],
-        "practice_location": [],
-        "taxonomy": []
+        "other_names": [],
+        "practiceLocations": [],
+        "taxonomies": []
       }
     }
   },
   "new": {
     "search_npi": {
       "search_npi_ref01": {
-        "address": [],
+        "addresses": [],
         "basic": {},
-        "endpoint": [],
+        "endpoints": [],
         "enumeration_type": "s16b",
-        "identifier": [],
+        "identifiers": [],
         "number": "s16d",
-        "other_name": [],
-        "practice_location": [],
-        "taxonomy": []
+        "other_names": [],
+        "practiceLocations": [],
+        "taxonomies": []
       }
     }
   }

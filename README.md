@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = NppesNpiRegistrySDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = NppesNpiRegistrySDK.test({
+  entity: {
+    search_npi: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const searchnpis = await client.SearchNpi().list()
-// searchnpis is an array of bare SearchNpi records populated with mock data
+// searchnpis is an array of SearchNpi entities, populated with mock data
+// — call searchnpis[0].data() for the record itself
 console.log(searchnpis)
 ```
 
@@ -110,7 +119,7 @@ import { NppesNpiRegistrySDK } from '@voxgig-sdk/nppes-npi-registry'
 
 const client = new NppesNpiRegistrySDK()
 
-// List all searchnpis (returns SearchNpi[])
+// List all searchnpis (returns SearchNpiEntity[] — .data() for the record)
 const searchnpis = await client.SearchNpi().list()
 for (const searchnpi of searchnpis) {
   console.log(searchnpi)
@@ -343,6 +352,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://npiregistry.cms.hhs.gov/api-page](https://npiregistry.cms.hhs.gov/api-page)
 

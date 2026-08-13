@@ -70,7 +70,7 @@ describe("SearchNpiEntity", function()
     -- The basic flow consumes synthetic IDs from the fixture. In live mode
     -- without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup.synthetic_only then
-      pending("live entity test uses synthetic IDs from fixture — set NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID JSON to run live")
+      pending("live entity test uses synthetic IDs from fixture — set NPPES_NPI_REGISTRY_TEST_SEARCH_NPI_ENTID JSON to run live")
       return
     end
     local client = setup.client
@@ -126,22 +126,22 @@ function search_npi_basic_setup(extra)
   -- Detect ENTID env override before envOverride consumes it. When live
   -- mode is on without a real override, the basic test runs against synthetic
   -- IDs from the fixture and 4xx's. Surface this so the test can skip.
-  local entid_env_raw = os.getenv("NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID")
+  local entid_env_raw = os.getenv("NPPES_NPI_REGISTRY_TEST_SEARCH_NPI_ENTID")
   local idmap_overridden = entid_env_raw ~= nil and entid_env_raw:match("^%s*{") ~= nil
 
   local env = runner.env_override({
-    ["NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID"] = idmap,
-    ["NPPESNPIREGISTRY_TEST_LIVE"] = "FALSE",
-    ["NPPESNPIREGISTRY_TEST_EXPLAIN"] = "FALSE",
+    ["NPPES_NPI_REGISTRY_TEST_SEARCH_NPI_ENTID"] = idmap,
+    ["NPPES_NPI_REGISTRY_TEST_LIVE"] = "FALSE",
+    ["NPPES_NPI_REGISTRY_TEST_EXPLAIN"] = "FALSE",
   })
 
   local idmap_resolved = helpers.to_map(
-    env["NPPESNPIREGISTRY_TEST_SEARCH_NPI_ENTID"])
+    env["NPPES_NPI_REGISTRY_TEST_SEARCH_NPI_ENTID"])
   if idmap_resolved == nil then
     idmap_resolved = helpers.to_map(idmap)
   end
 
-  if env["NPPESNPIREGISTRY_TEST_LIVE"] == "TRUE" then
+  if env["NPPES_NPI_REGISTRY_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
       },
@@ -150,13 +150,13 @@ function search_npi_basic_setup(extra)
     client = sdk.new(helpers.to_map(merged_opts))
   end
 
-  local live = env["NPPESNPIREGISTRY_TEST_LIVE"] == "TRUE"
+  local live = env["NPPES_NPI_REGISTRY_TEST_LIVE"] == "TRUE"
   return {
     client = client,
     data = entity_data,
     idmap = idmap_resolved,
     env = env,
-    explain = env["NPPESNPIREGISTRY_TEST_EXPLAIN"] == "TRUE",
+    explain = env["NPPES_NPI_REGISTRY_TEST_EXPLAIN"] == "TRUE",
     live = live,
     synthetic_only = live and not idmap_overridden,
     now = os.time() * 1000,

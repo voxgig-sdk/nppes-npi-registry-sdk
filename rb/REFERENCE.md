@@ -93,15 +93,15 @@ search_npi = client.SearchNpi
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `address` | `Array` | No |  |
+| `addresses` | `Array` | No |  |
 | `basic` | `Hash` | No |  |
-| `endpoint` | `Array` | No |  |
+| `endpoints` | `Array` | No |  |
 | `enumeration_type` | `String` | No |  |
-| `identifier` | `Array` | No |  |
+| `identifiers` | `Array` | No |  |
 | `number` | `String` | No |  |
-| `other_name` | `Array` | No |  |
-| `practice_location` | `Array` | No |  |
-| `taxonomy` | `Array` | No |  |
+| `other_names` | `Array` | No |  |
+| `practiceLocations` | `Array` | No |  |
+| `taxonomies` | `Array` | No |  |
 
 ### Operations
 
