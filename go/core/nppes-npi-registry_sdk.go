@@ -23,7 +23,7 @@ func NewNppesNpiRegistrySDK(options map[string]any) *NppesNpiRegistrySDK {
 
 	sdk.utility = NewUtility()
 
-	config := MakeConfig()
+	config := SharedConfig()
 
 	sdk.rootctx = sdk.utility.MakeContext(map[string]any{
 		"client":  sdk,

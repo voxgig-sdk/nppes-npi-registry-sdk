@@ -15,7 +15,7 @@ require_relative "../NppesNpiRegistry_sdk"
 module NppesNpiRegistryFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = NppesNpiRegistryConfig.make_config["feature"]
+    f = NppesNpiRegistryConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

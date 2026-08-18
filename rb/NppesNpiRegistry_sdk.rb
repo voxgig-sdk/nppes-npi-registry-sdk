@@ -28,7 +28,7 @@ class NppesNpiRegistrySDK
     utility = NppesNpiRegistryUtility.new
     @_utility = utility
 
-    config = NppesNpiRegistryConfig.make_config
+    config = NppesNpiRegistryConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

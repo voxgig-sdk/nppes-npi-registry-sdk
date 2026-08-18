@@ -40,7 +40,7 @@ class NppesNpiRegistrySDK
         $utility = new NppesNpiRegistryUtility();
         $this->_utility = $utility;
 
-        $config = NppesNpiRegistryConfig::make_config();
+        $config = NppesNpiRegistryConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

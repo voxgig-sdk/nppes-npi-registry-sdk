@@ -23,8 +23,8 @@ class NppesNpiRegistrySDK:
         utility = NppesNpiRegistryUtility()
         self._utility = utility
 
-        from nppesnpiregistry_sdk.config import make_config
-        config = make_config()
+        from nppesnpiregistry_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,
