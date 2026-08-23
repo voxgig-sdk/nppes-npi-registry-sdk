@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'NppesNpiRegistry',
+        slug: "nppes-npi-registry",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,38 +67,47 @@ class Config {
       "fields": [
         {
           "name": "addresses",
+          "short": "Provider addresses",
           "type": "`$ARRAY`"
         },
         {
           "name": "basic",
+          "short": "Basic provider information",
           "type": "`$OBJECT`"
         },
         {
           "name": "endpoints",
+          "short": "Provider endpoints for health information exchange",
           "type": "`$ARRAY`"
         },
         {
           "name": "enumeration_type",
+          "short": "Type of enumeration",
           "type": "`$STRING`"
         },
         {
           "name": "identifiers",
+          "short": "Other identifiers",
           "type": "`$ARRAY`"
         },
         {
           "name": "number",
+          "short": "NPI number",
           "type": "`$STRING`"
         },
         {
           "name": "other_names",
+          "short": "Other names associated with the provider",
           "type": "`$ARRAY`"
         },
         {
           "name": "practiceLocations",
+          "short": "Practice locations",
           "type": "`$ARRAY`"
         },
         {
           "name": "taxonomies",
+          "short": "Provider taxonomy codes and descriptions",
           "type": "`$ARRAY`"
         }
       ],

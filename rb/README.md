@@ -237,15 +237,15 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `addresses` |  |
-| `basic` |  |
-| `endpoints` |  |
-| `enumeration_type` |  |
-| `identifiers` |  |
-| `number` |  |
-| `other_names` |  |
-| `practiceLocations` |  |
-| `taxonomies` |  |
+| `addresses` | Provider addresses |
+| `basic` | Basic provider information |
+| `endpoints` | Provider endpoints for health information exchange |
+| `enumeration_type` | Type of enumeration |
+| `identifiers` | Other identifiers |
+| `number` | NPI number |
+| `other_names` | Other names associated with the provider |
+| `practiceLocations` | Practice locations |
+| `taxonomies` | Provider taxonomy codes and descriptions |
 
 Operations: List.
 
@@ -270,15 +270,15 @@ Create an instance: `search_npi = client.SearchNpi`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `addresses` | `Array` |  |
-| `basic` | `Hash` |  |
-| `endpoints` | `Array` |  |
-| `enumeration_type` | `String` |  |
-| `identifiers` | `Array` |  |
-| `number` | `String` |  |
-| `other_names` | `Array` |  |
-| `practiceLocations` | `Array` |  |
-| `taxonomies` | `Array` |  |
+| `addresses` | `Array` | Provider addresses |
+| `basic` | `Hash` | Basic provider information |
+| `endpoints` | `Array` | Provider endpoints for health information exchange |
+| `enumeration_type` | `String` | Type of enumeration |
+| `identifiers` | `Array` | Other identifiers |
+| `number` | `String` | NPI number |
+| `other_names` | `Array` | Other names associated with the provider |
+| `practiceLocations` | `Array` | Practice locations |
+| `taxonomies` | `Array` | Provider taxonomy codes and descriptions |
 
 #### Example: List
 

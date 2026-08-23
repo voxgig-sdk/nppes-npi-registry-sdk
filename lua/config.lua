@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "NppesNpiRegistry",
+      slug = "nppes-npi-registry",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -29,38 +32,47 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "addresses",
+            ["short"] = "Provider addresses",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "basic",
+            ["short"] = "Basic provider information",
             ["type"] = "`$OBJECT`",
           },
           {
             ["name"] = "endpoints",
+            ["short"] = "Provider endpoints for health information exchange",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "enumeration_type",
+            ["short"] = "Type of enumeration",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "identifiers",
+            ["short"] = "Other identifiers",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "number",
+            ["short"] = "NPI number",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "other_names",
+            ["short"] = "Other names associated with the provider",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "practiceLocations",
+            ["short"] = "Practice locations",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "taxonomies",
+            ["short"] = "Provider taxonomy codes and descriptions",
             ["type"] = "`$ARRAY`",
           },
         },

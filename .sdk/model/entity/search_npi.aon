@@ -8,46 +8,55 @@ main: kit: entity: search_npi: {
     {
       name: "addresses"
       req: false
+      short: "Provider addresses"
       type: "`$ARRAY`"
     }
     {
       name: "basic"
       req: false
+      short: "Basic provider information"
       type: "`$OBJECT`"
     }
     {
       name: "endpoints"
       req: false
+      short: "Provider endpoints for health information exchange"
       type: "`$ARRAY`"
     }
     {
       name: "enumeration_type"
       req: false
+      short: "Type of enumeration"
       type: "`$STRING`"
     }
     {
       name: "identifiers"
       req: false
+      short: "Other identifiers"
       type: "`$ARRAY`"
     }
     {
       name: "number"
       req: false
+      short: "NPI number"
       type: "`$STRING`"
     }
     {
       name: "other_names"
       req: false
+      short: "Other names associated with the provider"
       type: "`$ARRAY`"
     }
     {
       name: "practiceLocations"
       req: false
+      short: "Practice locations"
       type: "`$ARRAY`"
     }
     {
       name: "taxonomies"
       req: false
+      short: "Provider taxonomy codes and descriptions"
       type: "`$ARRAY`"
     }
   ]

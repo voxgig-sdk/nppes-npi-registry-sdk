@@ -6,7 +6,7 @@ The Golang SDK for the NppesNpiRegistry API — an entity-oriented client using 
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.SearchNpi(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,15 +260,15 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"addresses"` |  |
-| `"basic"` |  |
-| `"endpoints"` |  |
-| `"enumeration_type"` |  |
-| `"identifiers"` |  |
-| `"number"` |  |
-| `"other_names"` |  |
-| `"practiceLocations"` |  |
-| `"taxonomies"` |  |
+| `"addresses"` | Provider addresses |
+| `"basic"` | Basic provider information |
+| `"endpoints"` | Provider endpoints for health information exchange |
+| `"enumeration_type"` | Type of enumeration |
+| `"identifiers"` | Other identifiers |
+| `"number"` | NPI number |
+| `"other_names"` | Other names associated with the provider |
+| `"practiceLocations"` | Practice locations |
+| `"taxonomies"` | Provider taxonomy codes and descriptions |
 
 Operations: List.
 
@@ -293,15 +293,15 @@ Create an instance: `searchNpi := client.SearchNpi(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `addresses` | `[]any` |  |
-| `basic` | `map[string]any` |  |
-| `endpoints` | `[]any` |  |
-| `enumeration_type` | `string` |  |
-| `identifiers` | `[]any` |  |
-| `number` | `string` |  |
-| `other_names` | `[]any` |  |
-| `practiceLocations` | `[]any` |  |
-| `taxonomies` | `[]any` |  |
+| `addresses` | `[]any` | Provider addresses |
+| `basic` | `map[string]any` | Basic provider information |
+| `endpoints` | `[]any` | Provider endpoints for health information exchange |
+| `enumeration_type` | `string` | Type of enumeration |
+| `identifiers` | `[]any` | Other identifiers |
+| `number` | `string` | NPI number |
+| `other_names` | `[]any` | Other names associated with the provider |
+| `practiceLocations` | `[]any` | Practice locations |
+| `taxonomies` | `[]any` | Provider taxonomy codes and descriptions |
 
 #### Example: List
 

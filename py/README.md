@@ -243,15 +243,15 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `addresses` |  |
-| `basic` |  |
-| `endpoints` |  |
-| `enumeration_type` |  |
-| `identifiers` |  |
-| `number` |  |
-| `other_names` |  |
-| `practiceLocations` |  |
-| `taxonomies` |  |
+| `addresses` | Provider addresses |
+| `basic` | Basic provider information |
+| `endpoints` | Provider endpoints for health information exchange |
+| `enumeration_type` | Type of enumeration |
+| `identifiers` | Other identifiers |
+| `number` | NPI number |
+| `other_names` | Other names associated with the provider |
+| `practiceLocations` | Practice locations |
+| `taxonomies` | Provider taxonomy codes and descriptions |
 
 Operations: List.
 
@@ -276,15 +276,15 @@ Create an instance: `search_npi = client.SearchNpi()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `addresses` | `list` |  |
-| `basic` | `dict` |  |
-| `endpoints` | `list` |  |
-| `enumeration_type` | `str` |  |
-| `identifiers` | `list` |  |
-| `number` | `str` |  |
-| `other_names` | `list` |  |
-| `practiceLocations` | `list` |  |
-| `taxonomies` | `list` |  |
+| `addresses` | `list` | Provider addresses |
+| `basic` | `dict` | Basic provider information |
+| `endpoints` | `list` | Provider endpoints for health information exchange |
+| `enumeration_type` | `str` | Type of enumeration |
+| `identifiers` | `list` | Other identifiers |
+| `number` | `str` | NPI number |
+| `other_names` | `list` | Other names associated with the provider |
+| `practiceLocations` | `list` | Practice locations |
+| `taxonomies` | `list` | Provider taxonomy codes and descriptions |
 
 #### Example: List
 

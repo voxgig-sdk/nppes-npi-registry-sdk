@@ -92,15 +92,15 @@ $search_npi = $client->SearchNpi();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `addresses` | `array` | No |  |
-| `basic` | `array` | No |  |
-| `endpoints` | `array` | No |  |
-| `enumeration_type` | `string` | No |  |
-| `identifiers` | `array` | No |  |
-| `number` | `string` | No |  |
-| `other_names` | `array` | No |  |
-| `practiceLocations` | `array` | No |  |
-| `taxonomies` | `array` | No |  |
+| `addresses` | `array` | No | Provider addresses |
+| `basic` | `array` | No | Basic provider information |
+| `endpoints` | `array` | No | Provider endpoints for health information exchange |
+| `enumeration_type` | `string` | No | Type of enumeration |
+| `identifiers` | `array` | No | Other identifiers |
+| `number` | `string` | No | NPI number |
+| `other_names` | `array` | No | Other names associated with the provider |
+| `practiceLocations` | `array` | No | Practice locations |
+| `taxonomies` | `array` | No | Provider taxonomy codes and descriptions |
 
 ### Operations
 

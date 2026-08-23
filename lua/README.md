@@ -231,15 +231,15 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `addresses` |  |
-| `basic` |  |
-| `endpoints` |  |
-| `enumeration_type` |  |
-| `identifiers` |  |
-| `number` |  |
-| `other_names` |  |
-| `practiceLocations` |  |
-| `taxonomies` |  |
+| `addresses` | Provider addresses |
+| `basic` | Basic provider information |
+| `endpoints` | Provider endpoints for health information exchange |
+| `enumeration_type` | Type of enumeration |
+| `identifiers` | Other identifiers |
+| `number` | NPI number |
+| `other_names` | Other names associated with the provider |
+| `practiceLocations` | Practice locations |
+| `taxonomies` | Provider taxonomy codes and descriptions |
 
 Operations: List.
 
@@ -264,15 +264,15 @@ Create an instance: `local search_npi = client:SearchNpi(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `addresses` | `table` |  |
-| `basic` | `table` |  |
-| `endpoints` | `table` |  |
-| `enumeration_type` | `string` |  |
-| `identifiers` | `table` |  |
-| `number` | `string` |  |
-| `other_names` | `table` |  |
-| `practiceLocations` | `table` |  |
-| `taxonomies` | `table` |  |
+| `addresses` | `table` | Provider addresses |
+| `basic` | `table` | Basic provider information |
+| `endpoints` | `table` | Provider endpoints for health information exchange |
+| `enumeration_type` | `string` | Type of enumeration |
+| `identifiers` | `table` | Other identifiers |
+| `number` | `string` | NPI number |
+| `other_names` | `table` | Other names associated with the provider |
+| `practiceLocations` | `table` | Practice locations |
+| `taxonomies` | `table` | Provider taxonomy codes and descriptions |
 
 #### Example: List
 

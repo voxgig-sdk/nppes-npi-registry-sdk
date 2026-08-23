@@ -247,15 +247,15 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `addresses` |  |
-| `basic` |  |
-| `endpoints` |  |
-| `enumeration_type` |  |
-| `identifiers` |  |
-| `number` |  |
-| `other_names` |  |
-| `practiceLocations` |  |
-| `taxonomies` |  |
+| `addresses` | Provider addresses |
+| `basic` | Basic provider information |
+| `endpoints` | Provider endpoints for health information exchange |
+| `enumeration_type` | Type of enumeration |
+| `identifiers` | Other identifiers |
+| `number` | NPI number |
+| `other_names` | Other names associated with the provider |
+| `practiceLocations` | Practice locations |
+| `taxonomies` | Provider taxonomy codes and descriptions |
 
 Operations: List.
 
@@ -280,15 +280,15 @@ Create an instance: `$search_npi = $client->SearchNpi();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `addresses` | `array` |  |
-| `basic` | `array` |  |
-| `endpoints` | `array` |  |
-| `enumeration_type` | `string` |  |
-| `identifiers` | `array` |  |
-| `number` | `string` |  |
-| `other_names` | `array` |  |
-| `practiceLocations` | `array` |  |
-| `taxonomies` | `array` |  |
+| `addresses` | `array` | Provider addresses |
+| `basic` | `array` | Basic provider information |
+| `endpoints` | `array` | Provider endpoints for health information exchange |
+| `enumeration_type` | `string` | Type of enumeration |
+| `identifiers` | `array` | Other identifiers |
+| `number` | `string` | NPI number |
+| `other_names` | `array` | Other names associated with the provider |
+| `practiceLocations` | `array` | Practice locations |
+| `taxonomies` | `array` | Provider taxonomy codes and descriptions |
 
 #### Example: List
 

@@ -87,15 +87,15 @@ search_npi = client.SearchNpi()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `addresses` | `list` | No |  |
-| `basic` | `dict` | No |  |
-| `endpoints` | `list` | No |  |
-| `enumeration_type` | `str` | No |  |
-| `identifiers` | `list` | No |  |
-| `number` | `str` | No |  |
-| `other_names` | `list` | No |  |
-| `practiceLocations` | `list` | No |  |
-| `taxonomies` | `list` | No |  |
+| `addresses` | `list` | No | Provider addresses |
+| `basic` | `dict` | No | Basic provider information |
+| `endpoints` | `list` | No | Provider endpoints for health information exchange |
+| `enumeration_type` | `str` | No | Type of enumeration |
+| `identifiers` | `list` | No | Other identifiers |
+| `number` | `str` | No | NPI number |
+| `other_names` | `list` | No | Other names associated with the provider |
+| `practiceLocations` | `list` | No | Practice locations |
+| `taxonomies` | `list` | No | Provider taxonomy codes and descriptions |
 
 ### Operations
 

@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "NppesNpiRegistry",
+			"slug": "nppes-npi-registry",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,38 +36,47 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "addresses",
+						"short": "Provider addresses",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "basic",
+						"short": "Basic provider information",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "endpoints",
+						"short": "Provider endpoints for health information exchange",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "enumeration_type",
+						"short": "Type of enumeration",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "identifiers",
+						"short": "Other identifiers",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "number",
+						"short": "NPI number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "other_names",
+						"short": "Other names associated with the provider",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "practiceLocations",
+						"short": "Practice locations",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "taxonomies",
+						"short": "Provider taxonomy codes and descriptions",
 						"type": "`$ARRAY`",
 					},
 				},

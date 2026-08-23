@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,15 +287,15 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `addresses` |  |
-| `basic` |  |
-| `endpoints` |  |
-| `enumeration_type` |  |
-| `identifiers` |  |
-| `number` |  |
-| `other_names` |  |
-| `practiceLocations` |  |
-| `taxonomies` |  |
+| `addresses` | Provider addresses |
+| `basic` | Basic provider information |
+| `endpoints` | Provider endpoints for health information exchange |
+| `enumeration_type` | Type of enumeration |
+| `identifiers` | Other identifiers |
+| `number` | NPI number |
+| `other_names` | Other names associated with the provider |
+| `practiceLocations` | Practice locations |
+| `taxonomies` | Provider taxonomy codes and descriptions |
 
 Operations: list.
 
@@ -320,15 +320,15 @@ Create an instance: `const search_npi = client.SearchNpi()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `addresses` | `any[]` |  |
-| `basic` | `Record<string, any>` |  |
-| `endpoints` | `any[]` |  |
-| `enumeration_type` | `string` |  |
-| `identifiers` | `any[]` |  |
-| `number` | `string` |  |
-| `other_names` | `any[]` |  |
-| `practiceLocations` | `any[]` |  |
-| `taxonomies` | `any[]` |  |
+| `addresses` | `any[]` | Provider addresses |
+| `basic` | `Record<string, any>` | Basic provider information |
+| `endpoints` | `any[]` | Provider endpoints for health information exchange |
+| `enumeration_type` | `string` | Type of enumeration |
+| `identifiers` | `any[]` | Other identifiers |
+| `number` | `string` | NPI number |
+| `other_names` | `any[]` | Other names associated with the provider |
+| `practiceLocations` | `any[]` | Practice locations |
+| `taxonomies` | `any[]` | Provider taxonomy codes and descriptions |
 
 #### Example: List
 

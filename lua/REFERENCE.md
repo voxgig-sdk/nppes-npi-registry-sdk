@@ -90,15 +90,15 @@ local search_npi = client:SearchNpi(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `addresses` | `table` | No |  |
-| `basic` | `table` | No |  |
-| `endpoints` | `table` | No |  |
-| `enumeration_type` | `string` | No |  |
-| `identifiers` | `table` | No |  |
-| `number` | `string` | No |  |
-| `other_names` | `table` | No |  |
-| `practiceLocations` | `table` | No |  |
-| `taxonomies` | `table` | No |  |
+| `addresses` | `table` | No | Provider addresses |
+| `basic` | `table` | No | Basic provider information |
+| `endpoints` | `table` | No | Provider endpoints for health information exchange |
+| `enumeration_type` | `string` | No | Type of enumeration |
+| `identifiers` | `table` | No | Other identifiers |
+| `number` | `string` | No | NPI number |
+| `other_names` | `table` | No | Other names associated with the provider |
+| `practiceLocations` | `table` | No | Practice locations |
+| `taxonomies` | `table` | No | Provider taxonomy codes and descriptions |
 
 ### Operations
 
