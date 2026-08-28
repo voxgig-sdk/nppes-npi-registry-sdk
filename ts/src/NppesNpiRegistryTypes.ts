@@ -18,14 +18,20 @@ export interface SearchNpi {
 }
 
 export interface SearchNpiListMatch {
-  addresses?: any[]
-  basic?: Record<string, any>
-  endpoints?: any[]
+  address_purpose?: string
+  city?: string
+  country_code?: string
   enumeration_type?: string
-  identifiers?: any[]
+  first_name?: string
+  last_name?: string
+  limit?: number
   number?: string
-  other_names?: any[]
-  practiceLocations?: any[]
-  taxonomies?: any[]
+  organization_name?: string
+  postal_code?: string
+  pretty?: boolean
+  skip?: number
+  state?: string
+  taxonomy_description?: string
+  version?: string
 }
 

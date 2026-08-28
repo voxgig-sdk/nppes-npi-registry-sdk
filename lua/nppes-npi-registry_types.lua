@@ -18,15 +18,21 @@
 ---@field taxonomies? table
 
 ---@class SearchNpiListMatch
----@field addresses? table
----@field basic? table
----@field endpoints? table
+---@field address_purpose? string
+---@field city? string
+---@field country_code? string
 ---@field enumeration_type? string
----@field identifiers? table
+---@field first_name? string
+---@field last_name? string
+---@field limit? number
 ---@field number? string
----@field other_names? table
----@field practiceLocations? table
----@field taxonomies? table
+---@field organization_name? string
+---@field postal_code? string
+---@field pretty? boolean
+---@field skip? number
+---@field state? string
+---@field taxonomy_description? string
+---@field version? string
 
 local M = {}
 

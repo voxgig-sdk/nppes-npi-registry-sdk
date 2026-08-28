@@ -29,14 +29,20 @@ class SearchNpi
 /** Request payload for SearchNpi#list. */
 class SearchNpiListMatch
 {
-    public ?array $addresses = null;
-    public ?array $basic = null;
-    public ?array $endpoints = null;
+    public ?string $address_purpose = null;
+    public ?string $city = null;
+    public ?string $country_code = null;
     public ?string $enumeration_type = null;
-    public ?array $identifiers = null;
+    public ?string $first_name = null;
+    public ?string $last_name = null;
+    public ?int $limit = null;
     public ?string $number = null;
-    public ?array $other_names = null;
-    public ?array $practiceLocations = null;
-    public ?array $taxonomies = null;
+    public ?string $organization_name = null;
+    public ?string $postal_code = null;
+    public ?bool $pretty = null;
+    public ?int $skip = null;
+    public ?string $state = null;
+    public ?string $taxonomy_description = null;
+    public ?string $version = null;
 }
 

@@ -51,42 +51,66 @@ SearchNpi = Struct.new(
 
 # Request payload for SearchNpi#list.
 #
-# @!attribute [rw] addresses
-#   @return [Array, nil]
+# @!attribute [rw] address_purpose
+#   @return [String, nil]
 #
-# @!attribute [rw] basic
-#   @return [Hash, nil]
+# @!attribute [rw] city
+#   @return [String, nil]
 #
-# @!attribute [rw] endpoints
-#   @return [Array, nil]
+# @!attribute [rw] country_code
+#   @return [String, nil]
 #
 # @!attribute [rw] enumeration_type
 #   @return [String, nil]
 #
-# @!attribute [rw] identifiers
-#   @return [Array, nil]
+# @!attribute [rw] first_name
+#   @return [String, nil]
+#
+# @!attribute [rw] last_name
+#   @return [String, nil]
+#
+# @!attribute [rw] limit
+#   @return [Integer, nil]
 #
 # @!attribute [rw] number
 #   @return [String, nil]
 #
-# @!attribute [rw] other_names
-#   @return [Array, nil]
+# @!attribute [rw] organization_name
+#   @return [String, nil]
 #
-# @!attribute [rw] practiceLocations
-#   @return [Array, nil]
+# @!attribute [rw] postal_code
+#   @return [String, nil]
 #
-# @!attribute [rw] taxonomies
-#   @return [Array, nil]
+# @!attribute [rw] pretty
+#   @return [Boolean, nil]
+#
+# @!attribute [rw] skip
+#   @return [Integer, nil]
+#
+# @!attribute [rw] state
+#   @return [String, nil]
+#
+# @!attribute [rw] taxonomy_description
+#   @return [String, nil]
+#
+# @!attribute [rw] version
+#   @return [String, nil]
 SearchNpiListMatch = Struct.new(
-  :addresses,
-  :basic,
-  :endpoints,
+  :address_purpose,
+  :city,
+  :country_code,
   :enumeration_type,
-  :identifiers,
+  :first_name,
+  :last_name,
+  :limit,
   :number,
-  :other_names,
-  :practiceLocations,
-  :taxonomies,
+  :organization_name,
+  :postal_code,
+  :pretty,
+  :skip,
+  :state,
+  :taxonomy_description,
+  :version,
   keyword_init: true
 )
 

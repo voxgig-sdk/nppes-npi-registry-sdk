@@ -27,15 +27,21 @@ type SearchNpi struct {
 
 // SearchNpiListMatch is the typed request payload for SearchNpi.ListTyped.
 type SearchNpiListMatch struct {
-	Addresses *[]any `json:"addresses,omitempty"`
-	Basic *map[string]any `json:"basic,omitempty"`
-	Endpoints *[]any `json:"endpoints,omitempty"`
+	AddressPurpose *string `json:"address_purpose,omitempty"`
+	City *string `json:"city,omitempty"`
+	CountryCode *string `json:"country_code,omitempty"`
 	EnumerationType *string `json:"enumeration_type,omitempty"`
-	Identifiers *[]any `json:"identifiers,omitempty"`
+	FirstName *string `json:"first_name,omitempty"`
+	LastName *string `json:"last_name,omitempty"`
+	Limit *int `json:"limit,omitempty"`
 	Number *string `json:"number,omitempty"`
-	OtherNames *[]any `json:"other_names,omitempty"`
-	PracticeLocations *[]any `json:"practiceLocations,omitempty"`
-	Taxonomies *[]any `json:"taxonomies,omitempty"`
+	OrganizationName *string `json:"organization_name,omitempty"`
+	PostalCode *string `json:"postal_code,omitempty"`
+	Pretty *bool `json:"pretty,omitempty"`
+	Skip *int `json:"skip,omitempty"`
+	State *string `json:"state,omitempty"`
+	TaxonomyDescription *string `json:"taxonomy_description,omitempty"`
+	Version *string `json:"version,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

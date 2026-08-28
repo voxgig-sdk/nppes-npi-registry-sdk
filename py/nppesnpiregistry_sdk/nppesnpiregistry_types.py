@@ -29,12 +29,18 @@ class SearchNpi(TypedDict, total=False):
 
 
 class SearchNpiListMatch(TypedDict, total=False):
-    addresses: list
-    basic: dict
-    endpoints: list
+    address_purpose: str
+    city: str
+    country_code: str
     enumeration_type: str
-    identifiers: list
+    first_name: str
+    last_name: str
+    limit: int
     number: str
-    other_names: list
-    practiceLocations: list
-    taxonomies: list
+    organization_name: str
+    postal_code: str
+    pretty: bool
+    skip: int
+    state: str
+    taxonomy_description: str
+    version: str
