@@ -211,7 +211,7 @@ class NppesNpiRegistryConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/',
-                  'parts' => [],
+                  'segments' => [],
                   'select' => [
                     'exist' => [
                       'address_purpose',
@@ -235,6 +235,7 @@ class NppesNpiRegistryConfig
                     'req' => '`reqdata`',
                     'res' => '`body.results`',
                   ],
+                  'parts' => [],
                 ],
               ],
             ],

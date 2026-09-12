@@ -197,7 +197,7 @@ module NppesNpiRegistryConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/",
-                  "parts" => [],
+                  "segments" => [],
                   "select" => {
                     "exist" => [
                       "address_purpose",
@@ -221,6 +221,7 @@ module NppesNpiRegistryConfig
                     "req" => "`reqdata`",
                     "res" => "`body.results`",
                   },
+                  "parts" => [],
                 },
               ],
             },
