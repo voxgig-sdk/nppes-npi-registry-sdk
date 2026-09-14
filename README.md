@@ -105,7 +105,7 @@ local results, err = client:SearchNpi():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/releases) |
+| TypeScript | `@voxgig-sdk/nppes-npi-registry-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/releases) |
 | Python | `voxgig-sdk-nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/releases) |
 | PHP | `voxgig-sdk/nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/nppes-npi-registry-sdk/go` | `go get github.com/voxgig-sdk/nppes-npi-registry-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:SearchNpi():list()
 ### TypeScript
 
 ```ts
-import { NppesNpiRegistrySDK } from '@voxgig-sdk/nppes-npi-registry'
+import { NppesNpiRegistrySDK } from '@voxgig-sdk/nppes-npi-registry-sdk'
 
 const client = new NppesNpiRegistrySDK()
 

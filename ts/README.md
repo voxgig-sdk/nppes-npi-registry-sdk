@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { NppesNpiRegistrySDK } from '@voxgig-sdk/nppes-npi-registry'
+import { NppesNpiRegistrySDK } from '@voxgig-sdk/nppes-npi-registry-sdk'
 
 const client = new NppesNpiRegistrySDK()
 ```
@@ -419,7 +419,7 @@ nppes-npi-registry/
 Import the SDK from the package root:
 
 ```ts
-import { NppesNpiRegistrySDK } from '@voxgig-sdk/nppes-npi-registry'
+import { NppesNpiRegistrySDK } from '@voxgig-sdk/nppes-npi-registry-sdk'
 ```
 
 ### Entity state
