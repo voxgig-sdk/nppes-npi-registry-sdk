@@ -1,12 +1,18 @@
 # NppesNpiRegistry SDK feature factory
 
 from nppesnpiregistry_sdk.feature.base_feature import NppesNpiRegistryBaseFeature
+from nppesnpiregistry_sdk.feature.ratelimit_feature import NppesNpiRegistryRatelimitFeature
+from nppesnpiregistry_sdk.feature.retry_feature import NppesNpiRegistryRetryFeature
 from nppesnpiregistry_sdk.feature.test_feature import NppesNpiRegistryTestFeature
+from nppesnpiregistry_sdk.feature.timeout_feature import NppesNpiRegistryTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: NppesNpiRegistryBaseFeature(),
+    "ratelimit": lambda: NppesNpiRegistryRatelimitFeature(),
+    "retry": lambda: NppesNpiRegistryRetryFeature(),
     "test": lambda: NppesNpiRegistryTestFeature(),
+    "timeout": lambda: NppesNpiRegistryTimeoutFeature(),
 }
 
 
