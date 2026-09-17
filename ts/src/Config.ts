@@ -127,9 +127,9 @@ class Config {
 
     entity: {
       
-      search_npi: {
-      },
-
+        search_npi: {
+        },
+  
     }
   }
 

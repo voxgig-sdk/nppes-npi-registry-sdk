@@ -105,12 +105,12 @@ local results, err = client:SearchNpi():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/nppes-npi-registry-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/releases) |
-| Python | `voxgig-sdk-nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/releases) |
-| PHP | `voxgig-sdk/nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/releases) |
+| TypeScript | `@voxgig-sdk/nppes-npi-registry-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
+| Python | `voxgig-sdk-nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
+| PHP | `voxgig-sdk/nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/nppes-npi-registry-sdk/go` | `go get github.com/voxgig-sdk/nppes-npi-registry-sdk/go@latest` |
-| Ruby | `voxgig-sdk-nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/releases) |
-| Lua | `voxgig-sdk-nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/releases) |
+| Ruby | `voxgig-sdk-nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
+| Lua | `voxgig-sdk-nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/nppes-npi-registry-sdk/go-cli` | `go install github.com/voxgig-sdk/nppes-npi-registry-sdk/go-cli/cmd/nppes-npi-registry@latest` |
 | Go MCP server | `github.com/voxgig-sdk/nppes-npi-registry-sdk/go-mcp` | `go get github.com/voxgig-sdk/nppes-npi-registry-sdk/go-mcp@latest` |
 
