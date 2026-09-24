@@ -76,8 +76,9 @@ declare class Config {
         search_npi: {
             fields: {
                 name: string;
-                short: string;
+                title: string;
                 type: string;
+                short: string;
             }[];
             name: string;
             op: {
@@ -85,45 +86,46 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {
-                            query: ({
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                type: string;
-                                example?: undefined;
-                            } | {
-                                example: number;
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                type: string;
-                            } | {
-                                example: boolean;
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                type: string;
-                            } | {
-                                example: string;
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                type: string;
-                            })[];
-                        };
                         kind: string;
                         method: string;
                         orig: string;
                         segments: never[];
-                        select: {
-                            exist: string[];
-                        };
+                        parts: never[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: never[];
+                        args: {
+                            query: ({
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                example?: undefined;
+                            } | {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                example: number;
+                            } | {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                example: boolean;
+                            } | {
+                                name: string;
+                                orig: string;
+                                type: string;
+                                kind: string;
+                                example: string;
+                            })[];
+                        };
+                        select: {
+                            exist: string[];
+                        };
                     }[];
                 };
             };

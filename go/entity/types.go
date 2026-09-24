@@ -1,7 +1,7 @@
 // Typed models for the NppesNpiRegistry SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,15 +14,6 @@ import (
 
 // SearchNpi is the typed data model for the search_npi entity.
 type SearchNpi struct {
-	Addresses *[]any `json:"addresses,omitempty"`
-	Basic *map[string]any `json:"basic,omitempty"`
-	Endpoints *[]any `json:"endpoints,omitempty"`
-	EnumerationType *string `json:"enumeration_type,omitempty"`
-	Identifiers *[]any `json:"identifiers,omitempty"`
-	Number *string `json:"number,omitempty"`
-	OtherNames *[]any `json:"other_names,omitempty"`
-	PracticeLocations *[]any `json:"practiceLocations,omitempty"`
-	Taxonomies *[]any `json:"taxonomies,omitempty"`
 }
 
 // SearchNpiListMatch is the typed request payload for SearchNpi.ListTyped.

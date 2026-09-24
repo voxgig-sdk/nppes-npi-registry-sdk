@@ -19,7 +19,6 @@ import type {
   SearchNpiListMatch,
 } from '../NppesNpiRegistryTypes'
 
-// TODO: needs Entity superclass
 class SearchNpiEntity extends NppesNpiRegistryEntityBase<SearchNpi> {
 
   constructor(client: NppesNpiRegistrySDK, entopts: any) {

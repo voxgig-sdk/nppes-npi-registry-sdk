@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SearchNpiEntity = void 0;
 const NppesNpiRegistryEntityBase_1 = require("../NppesNpiRegistryEntityBase");
-// TODO: needs Entity superclass
 class SearchNpiEntity extends NppesNpiRegistryEntityBase_1.NppesNpiRegistryEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

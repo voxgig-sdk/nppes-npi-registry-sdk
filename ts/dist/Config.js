@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -114,48 +107,57 @@ class Config {
             "fields": [
                 {
                     "name": "addresses",
-                    "short": "Provider addresses",
-                    "type": "`$ARRAY`"
+                    "title": "Addresses",
+                    "type": "`$ARRAY`",
+                    "short": "Provider addresses"
                 },
                 {
                     "name": "basic",
-                    "short": "Basic provider information",
-                    "type": "`$OBJECT`"
+                    "title": "Basic",
+                    "type": "`$OBJECT`",
+                    "short": "Basic provider information"
                 },
                 {
                     "name": "endpoints",
-                    "short": "Provider endpoints for health information exchange",
-                    "type": "`$ARRAY`"
+                    "title": "Endpoints",
+                    "type": "`$ARRAY`",
+                    "short": "Provider endpoints for health information exchange"
                 },
                 {
                     "name": "enumeration_type",
-                    "short": "Type of enumeration",
-                    "type": "`$STRING`"
+                    "title": "Enumeration Type",
+                    "type": "`$STRING`",
+                    "short": "Type of enumeration"
                 },
                 {
                     "name": "identifiers",
-                    "short": "Other identifiers",
-                    "type": "`$ARRAY`"
+                    "title": "Identifiers",
+                    "type": "`$ARRAY`",
+                    "short": "Other identifiers"
                 },
                 {
                     "name": "number",
-                    "short": "NPI number",
-                    "type": "`$STRING`"
+                    "title": "Number",
+                    "type": "`$STRING`",
+                    "short": "NPI number"
                 },
                 {
                     "name": "other_names",
-                    "short": "Other names associated with the provider",
-                    "type": "`$ARRAY`"
+                    "title": "Other Names",
+                    "type": "`$ARRAY`",
+                    "short": "Other names associated with the provider"
                 },
                 {
                     "name": "practiceLocations",
-                    "short": "Practice locations",
-                    "type": "`$ARRAY`"
+                    "title": "Practice Locations",
+                    "type": "`$ARRAY`",
+                    "short": "Practice locations"
                 },
                 {
                     "name": "taxonomies",
-                    "short": "Provider taxonomy codes and descriptions",
-                    "type": "`$ARRAY`"
+                    "title": "Taxonomies",
+                    "type": "`$ARRAY`",
+                    "short": "Provider taxonomy codes and descriptions"
                 }
             ],
             "name": "search_npi",
@@ -165,108 +167,114 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "kind": "query",
-                                        "name": "address_purpose",
-                                        "orig": "address_purpose",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "city",
-                                        "orig": "city",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "country_code",
-                                        "orig": "country_code",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "enumeration_type",
-                                        "orig": "enumeration_type",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "first_name",
-                                        "orig": "first_name",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "last_name",
-                                        "orig": "last_name",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": 10,
-                                        "kind": "query",
-                                        "name": "limit",
-                                        "orig": "limit",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "number",
-                                        "orig": "number",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "organization_name",
-                                        "orig": "organization_name",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "postal_code",
-                                        "orig": "postal_code",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": false,
-                                        "kind": "query",
-                                        "name": "pretty",
-                                        "orig": "pretty",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "example": 0,
-                                        "kind": "query",
-                                        "name": "skip",
-                                        "orig": "skip",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "state",
-                                        "orig": "state",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "taxonomy_description",
-                                        "orig": "taxonomy_description",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "2.1",
-                                        "kind": "query",
-                                        "name": "version",
-                                        "orig": "version",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/",
                             "segments": [],
+                            "parts": [],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.results`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "address_purpose",
+                                        "orig": "address_purpose",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "city",
+                                        "orig": "city",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "country_code",
+                                        "orig": "country_code",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "enumeration_type",
+                                        "orig": "enumeration_type",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "first_name",
+                                        "orig": "first_name",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "last_name",
+                                        "orig": "last_name",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "limit",
+                                        "orig": "limit",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 10
+                                    },
+                                    {
+                                        "name": "number",
+                                        "orig": "number",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "organization_name",
+                                        "orig": "organization_name",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "postal_code",
+                                        "orig": "postal_code",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "pretty",
+                                        "orig": "pretty",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query",
+                                        "example": false
+                                    },
+                                    {
+                                        "name": "skip",
+                                        "orig": "skip",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 0
+                                    },
+                                    {
+                                        "name": "state",
+                                        "orig": "state",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "taxonomy_description",
+                                        "orig": "taxonomy_description",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "version",
+                                        "orig": "version",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "2.1"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "address_purpose",
@@ -285,12 +293,7 @@ class Config {
                                     "taxonomy_description",
                                     "version"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.results`"
-                            },
-                            "parts": []
+                            }
                         }
                     ]
                 }

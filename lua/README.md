@@ -43,7 +43,7 @@ local searchnpis, err = client:SearchNpi():list()
 if err then error(err) end
 
 for _, item in ipairs(searchnpis) do
-  print(item["enumeration_type"])
+  print(item)
 end
 ```
 

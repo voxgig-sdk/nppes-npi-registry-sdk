@@ -1,0 +1,229 @@
+# Entity: search_npi
+
+main: kit: entity: search_npi: {
+
+  alias: field: {}
+
+  fields: {
+    addresses: {
+      h: "Addresses"
+      n: "addresses"
+      r: false
+      sh: "Provider addresses"
+      t: "`$ARRAY`"
+    }
+    basic: {
+      h: "Basic"
+      n: "basic"
+      r: false
+      sh: "Basic provider information"
+      t: "`$OBJECT`"
+    }
+    endpoints: {
+      h: "Endpoints"
+      n: "endpoints"
+      r: false
+      sh: "Provider endpoints for health information exchange"
+      t: "`$ARRAY`"
+    }
+    enumeration_type: {
+      h: "Enumeration Type"
+      n: "enumeration_type"
+      r: false
+      sh: "Type of enumeration"
+      t: "`$STRING`"
+    }
+    identifiers: {
+      h: "Identifiers"
+      n: "identifiers"
+      r: false
+      sh: "Other identifiers"
+      t: "`$ARRAY`"
+    }
+    number: {
+      h: "Number"
+      n: "number"
+      r: false
+      sh: "NPI number"
+      t: "`$STRING`"
+    }
+    other_names: {
+      h: "Other Names"
+      n: "other_names"
+      r: false
+      sh: "Other names associated with the provider"
+      t: "`$ARRAY`"
+    }
+    practiceLocations: {
+      h: "Practice Locations"
+      n: "practiceLocations"
+      r: false
+      sh: "Practice locations"
+      t: "`$ARRAY`"
+    }
+    taxonomies: {
+      h: "Taxonomies"
+      n: "taxonomies"
+      r: false
+      sh: "Provider taxonomy codes and descriptions"
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "search_npi"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "address_purpose"
+                or: "address_purpose"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "city"
+                or: "city"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "country_code"
+                or: "country_code"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "enumeration_type"
+                or: "enumeration_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "first_name"
+                or: "first_name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "last_name"
+                or: "last_name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 10
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "number"
+                or: "number"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "organization_name"
+                or: "organization_name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "postal_code"
+                or: "postal_code"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: false
+                k: "query"
+                n: "pretty"
+                or: "pretty"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "skip"
+                or: "skip"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "state"
+                or: "state"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "taxonomy_description"
+                or: "taxonomy_description"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2.1"
+                k: "query"
+                n: "version"
+                or: "version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/"
+          q: {
+            exist: [
+              "address_purpose"
+              "city"
+              "country_code"
+              "enumeration_type"
+              "first_name"
+              "last_name"
+              "limit"
+              "number"
+              "organization_name"
+              "postal_code"
+              "pretty"
+              "skip"
+              "state"
+              "taxonomy_description"
+              "version"
+            ]
+          }
+          t: {
+            req: "`reqdata`"
+            res: "`body.results`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

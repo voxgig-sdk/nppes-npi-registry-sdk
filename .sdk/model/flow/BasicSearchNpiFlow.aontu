@@ -1,0 +1,22 @@
+# BasicSearchNpiFlow
+
+main: kit: flow: BasicSearchNpiFlow:
+{
+  entity: "search_npi",
+  kind: "basic",
+  name: "BasicSearchNpiFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "search_npi_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSearchNpiFlow"
+}
