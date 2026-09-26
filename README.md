@@ -106,11 +106,11 @@ local results, err = client:SearchNpi():list()
 | Language | Package | Install |
 | --- | --- | --- |
 | TypeScript | `@voxgig-sdk/nppes-npi-registry-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
-| Python | `voxgig-sdk-nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
-| PHP | `voxgig-sdk/nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
+| Python | `voxgig-sdk-nppes-npi-registry-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
+| PHP | `voxgig-sdk/nppes-npi-registry-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/nppes-npi-registry-sdk/go` | `go get github.com/voxgig-sdk/nppes-npi-registry-sdk/go@latest` |
-| Ruby | `voxgig-sdk-nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
-| Lua | `voxgig-sdk-nppes-npi-registry` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
+| Ruby | `voxgig-sdk-nppes-npi-registry-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
+| Lua | `voxgig-sdk-nppes-npi-registry-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/nppes-npi-registry-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/nppes-npi-registry-sdk/go-cli` | `go install github.com/voxgig-sdk/nppes-npi-registry-sdk/go-cli/cmd/nppes-npi-registry@latest` |
 | Go MCP server | `github.com/voxgig-sdk/nppes-npi-registry-sdk/go-mcp` | `go get github.com/voxgig-sdk/nppes-npi-registry-sdk/go-mcp@latest` |
 
@@ -339,10 +339,10 @@ forking the SDK.
 
 | Feature | Purpose |
 | --- | --- |
-| **RatelimitFeature** | Client-side rate limiting via a token bucket |
-| **RetryFeature** | Automatic retry of transient failures with exponential backoff |
-| **TestFeature** | In-memory mock transport for testing without a live server |
-| **TimeoutFeature** | Per-request timeout with transport abort |
+| **RatelimitFeature** | Rate limiting |
+| **RetryFeature** | Retry |
+| **TestFeature** | Test transport |
+| **TimeoutFeature** | Timeout |
 
 Pass custom features via the `extend` option at construction time.
 
